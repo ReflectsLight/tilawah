@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+##
+# Paths
+libexec_dir = File.realpath(File.join(__dir__, "..", "libexec", "quran-audio"))
+
+##
+# Utils
+def spawn(libexec_dir, exec, *args)
+  Process.spawn File.join(libexec_dir, exec), *args
+end
+
+def wait(pid)
+  Process.wait(pid)
+rescue Interrupt
+  retry
+end
+
+case ARGV[0]
+when "pull"
+  wait spawn(libexec_dir, "pull", *ARGV[1..-1])
+when "create-timestamps"
+  Process.wait Process.spawn(RbConfig.ruby, File.join(libexec_dir, "create-timestamps"))
+else
+  Process.wait Process.spawn(RbConfig.ruby, File.join(libexec_dir, "help"))
+end

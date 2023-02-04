@@ -1,0 +1,47 @@
+GIT
+  remote: https://github.com/0x1eef/io-line.rb.git
+  revision: 04754c6f2ed255bee1fbfdf93e88722b9a784eb5
+  tag: v0.1.0
+  specs:
+    io-line.rb (0.1.0)
+      io-console (~> 0.5)
+
+GIT
+  remote: https://github.com/0x1eef/optparse.git
+  revision: dad52adb83149d8516cd3bb574e2209387428db8
+  branch: feat/required_switch
+  specs:
+    optparse (0.5.0)
+
+GIT
+  remote: https://github.com/0x1eef/ryo.rb.git
+  revision: d088998408292258d0359654cda08029b9e5c521
+  specs:
+    ryo.rb (0.3.0)
+
+PATH
+  remote: .
+  specs:
+    quran-audio (0.1.0)
+      io-line.rb (~> 0.1)
+      optparse (~> 0.5)
+      ruby-mp3info (~> 0.8)
+      ryo.rb (~> 0.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    io-console (0.6.0)
+    ruby-mp3info (0.8.10)
+
+PLATFORMS
+  amd64-freebsd-14
+
+DEPENDENCIES
+  io-line.rb!
+  optparse (~> 0.5)!
+  quran-audio!
+  ryo.rb!
+
+BUNDLED WITH
+   2.4.1
