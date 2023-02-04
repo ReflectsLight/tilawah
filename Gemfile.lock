@@ -25,6 +25,7 @@ PATH
     quran-audio (0.1.0)
       io-line.rb (~> 0.1)
       optparse (~> 0.5)
+      paint (~> 2.3)
       ruby-mp3info (~> 0.8)
       ryo.rb (~> 0.3)
 
@@ -32,6 +33,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     io-console (0.6.0)
+    paint (2.3.0)
     ruby-mp3info (0.8.10)
 
 PLATFORMS
