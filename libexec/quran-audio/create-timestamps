@@ -1,12 +1,21 @@
 #!/usr/bin/env ruby
 require "mp3info"
+require "optparse"
 require "json"
+require "ryo"
+
+##
+# CLI options
+options = Ryo({author: "*"})
+OptionParser.new do |o|
+  o.on("-aAUTHOR", "--author NAME", "An author's name (default: all authors)")
+end.parse(ARGV, into: options)
 
 ##
 # Paths
 root_dir   = File.realpath(File.join(__dir__, "..", ".."))
 share_dir  = File.join(root_dir, "share", "quran-audio")
-author_dir = File.join(share_dir, "alafasy")
+author_dir = File.join(share_dir, options.author)
 
 ##
 # Utils
