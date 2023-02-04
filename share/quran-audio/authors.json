@@ -28,5 +28,16 @@
     "dest": {
       "dir": "%{share_dir}/abdullah_awad_al_juhany/"
     }
+  },
+  "ahmad_bin_ali_al_ajmi": {
+    "name": "Ahmad bin Ali Al-Ajmi",
+    "nationality": "Saudi Arabia",
+    "http": {
+      "path": "/data/ahmed_ibn_ali_al_ajamy_%{bitrate}kbps/"
+    },
+    "dest": {
+      "dir": "%{share_dir}/ahmad_bin_ali_al_ajmi/"
+    }
   }
+
 }
