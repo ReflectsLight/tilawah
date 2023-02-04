@@ -22,6 +22,7 @@ The list of recitation authors:
 
 * Mishari bin Rashed Alafasy
 * Aziz Alilli
+* Abdullah Awad Al Juhany
 
 See [share/quran-audio/authors.json](share/quran-audio/authors.json) for more information
 about the authors.
