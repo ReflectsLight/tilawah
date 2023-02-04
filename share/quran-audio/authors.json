@@ -18,5 +18,15 @@
     "dest": {
       "dir": "%{share_dir}/aziz_alili/"
     }
+  },
+  "abdullah_awad_al_juhany": {
+    "name": "Abdullah Awad Al Juhany",
+    "nationality": "Saudi Arabia",
+    "http": {
+      "path": "/data/Abdullaah_3awwaad_Al-Juhaynee_%{bitrate}kbps/"
+    },
+    "dest": {
+      "dir": "%{share_dir}/abdullah_awad_al_juhany/"
+    }
   }
 }
