@@ -3,6 +3,7 @@
     "name": "Mishari bin Rashed Alafasy",
     "nationality": "Kuwait",
     "available_bitrates": [128, 64],
+    "default_bitrate": 128,
     "http": {
       "path": "/data/Alafasy_%{bitrate}kbps/"
     },
@@ -14,6 +15,7 @@
     "name": "Aziz Alili",
     "nationality": "Macedonia",
     "available_bitrates": [128],
+    "default_bitrate": 128,
     "http": {
       "path": "/data/aziz_alili_%{bitrate}kbps/"
     },
@@ -25,6 +27,7 @@
     "name": "Abdullah Awad Al Juhany",
     "nationality": "Saudi Arabia",
     "available_bitrates": [128],
+    "default_bitrate": 128,
     "http": {
       "path": "/data/Abdullaah_3awwaad_Al-Juhaynee_%{bitrate}kbps/"
     },
@@ -36,6 +39,7 @@
     "name": "Ahmad bin Ali Al-Ajmi",
     "nationality": "Saudi Arabia",
     "available_bitrates": [128],
+    "default_bitrate": 128,
     "http": {
       "path": "/data/ahmed_ibn_ali_al_ajamy_%{bitrate}kbps/"
     },
