@@ -50,7 +50,8 @@ class Pull < Command
   end
 
   def write(res, fs_file, interrupt)
-    case when Net::HTTPOK
+    case res
+    when Net::HTTPOK
       mkdir_p File.dirname(fs_file)
       File.binwrite(fs_file, res.body)
       exit if interrupt
