@@ -15,6 +15,7 @@ begin
     o.on("-bBITRATE", "--bitrate BITRATE", "An MP3 bitrate (default: 128)")
     o.on("-sSURAH", "--surah SURAH", "A comma-separated list of surahs (default: all surahs)", Array)
     o.on("-cNUMBER", "--cooldown NUMBER", "A number of second(s) to wait between requests (default: 0.5)", Float)
+    o.on("-l", "--authors", "Show the available authors")
     o.on("-h", "--help", "Show help") do
       puts op.help
       exit(0)
@@ -28,6 +29,13 @@ end
 ##
 # main
 cmd = Pull.new(options)
+if cmd.options.authors
+  puts
+  puts Pull::Authors.new(cmd)
+  puts
+  exit
+end
+
 author = cmd.authors[options.author]
 skipped = false
 options.surah.each do |surah_no|

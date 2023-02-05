@@ -13,6 +13,7 @@ Usage: quran-audio pull [OPTIONS]
   -b, --bitrate BITRATE      An MP3 bitrate (default: 128)
   -s, --surah SURAH          A comma-separated list of surahs (default: all surahs)
   -c, --cooldown NUMBER      A number of second(s) to wait between requests (default: 0.5)
+  -l, --authors              Show the available authors
   -h, --help                 Show help
 ```
 
