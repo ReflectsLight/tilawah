@@ -21,7 +21,7 @@ class Pull < Command
     line.end.rewind.print("Wait for a graceful exit").end
     interrupt = true
     retry
-  rescue SystemCallError, Net::OpenTimeout => e
+  rescue SocketError, SystemCallError, Net::OpenTimeout => e
     line.end.rewind.print("#{e.class}: retry").end
     interrupt = nil
     retry
