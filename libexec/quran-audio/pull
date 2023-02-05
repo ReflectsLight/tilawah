@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
-require "net/http"
-require "json"
-require "fileutils"
+lib_dir = File.realpath File.join(__dir__, "..", "..", "lib", "quran-audio")
 require "optparse"
-require "io/line"
-require "ryo"
+require File.join(lib_dir, "pull")
 
 ##
 # CLI options
@@ -28,62 +25,20 @@ rescue
 end
 
 ##
-# HTTP
-hostname = "everyayah.com"
-http = Net::HTTP.new(hostname, 443).tap { _1.use_ssl = true }
-
-##
-# Paths
-root_dir  = File.realpath(File.join(__dir__, "..", ".."))
-share_dir = File.join(root_dir, "share", "quran-audio")
-
-##
-# Utils
-def pull(http, author, file, bitrate, interrupt: false, &b)
-  res = http.get File.join(format(author.http.path, bitrate:), file)
-  case res
-  when Net::HTTPOK
-    yield(res.body)
-    exit if interrupt
-    sleep 0.5
-  else
-    puts "error #{res.body}"
-  end
-rescue Interrupt
-  line.end.rewind.print("Please wait for a graceful exit").end
-  pull(http, author, file, bitrate, interrupt: true, &b)
-end
-
-def filename(surah_no, ayah_no)
-  surah_no = surah_no.rjust(3, "0")
-  ayah_no = ayah_no.to_s.rjust(3, "0")
-  "#{surah_no}#{ayah_no}.mp3"
-end
-
-def line
-  @line ||= IO::Line.new($stdout)
-end
-
-##
 # main
-authors    = Ryo.from JSON.parse(File.binread(File.join(share_dir, "authors.json")))
-author     = authors[options.author]
-dest_dir   = format(author.dest.dir, share_dir:)
-surah_size = JSON.parse(File.binread(File.join(share_dir, "surahsize.json")))
-FileUtils.mkdir_p(dest_dir)
-
+cmd = Pull.new(options)
+author = cmd.authors[options.author]
+skipped = false
 options.surah.each do |surah_no|
-  surah_no = surah_no.to_s
-  FileUtils.mkdir_p(File.join(dest_dir, surah_no))
-  1.upto(surah_size[surah_no]) do |ayah_no|
-    pull(http, author, filename(surah_no, ayah_no), options.bitrate) do |body|
-      File.binwrite(
-        File.join(dest_dir, surah_no, "#{ayah_no}.mp3"),
-        body
-      )
+  1.upto(cmd.surah_size[surah_no]) do |ayah_no|
+    if cmd.exist?(author, surah_no, ayah_no)
+      skipped = true
+      next
     end
-    percent = sprintf("%.2f", (ayah_no.to_i / surah_size[surah_no].to_f) * 100)
-    line.rewind.print "Surah #{surah_no} [#{percent}%]"
+    cmd.pull(author, surah_no.to_s, ayah_no.to_s)
+    percent = sprintf("%.2f", (ayah_no / cmd.surah_size[surah_no].to_f) * 100)
+    cmd.line.rewind.print "Surah #{surah_no} [#{percent}%]"
+    skipped = false
   end
-  line.end
+  cmd.line.end unless skipped
 end
