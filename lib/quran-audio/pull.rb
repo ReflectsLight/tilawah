@@ -13,10 +13,10 @@ class Pull < Command
     @options = options
   end
 
-  def pull(author, surah_no, ayah_no)
+  def pull(surah_no, ayah_no)
     interrupt ||= nil
-    res = http.get http_path(author, surah_no, ayah_no)
-    write(res, fs_path(author, surah_no, ayah_no), interrupt)
+    res = http.get http_path(surah_no, ayah_no)
+    write(res, fs_path(surah_no, ayah_no), interrupt)
     sleep(options.cooldown)
   rescue Interrupt
     line.end.rewind.print("Wait for a graceful exit").end
@@ -28,24 +28,28 @@ class Pull < Command
     retry
   end
 
-  def bitrate
-    options.bitrate
+  def author
+    @author ||= authors[options.author]
   end
 
-  def exist?(author, surah_no, ayah_no)
-    File.exist? fs_path(author, surah_no, ayah_no)
+  def bitrate
+    options.bitrate || author.default_bitrate
+  end
+
+  def exist?(surah_no, ayah_no)
+    File.exist? fs_path(surah_no, ayah_no)
   end
 
   private
 
-  def http_path(author, surah_no, ayah_no)
+  def http_path(surah_no, ayah_no)
     surah_no  = surah_no.rjust(3, "0")
     ayah_no   = ayah_no.to_s.rjust(3, "0")
     http_file ="#{surah_no}#{ayah_no}.mp3"
-    File.join format(author.http.path, bitrate: bitrate), http_file
+    File.join format(author.http.path, bitrate:), http_file
   end
 
-  def fs_path(author, surah_no, ayah_no)
+  def fs_path(surah_no, ayah_no)
     dir = format(author.dest.dir, share_dir:)
     File.join(dir, surah_no.to_s, "#{ayah_no}.mp3")
   end
