@@ -1,3 +1,4 @@
 <%= Paint[author.name, :bold] %>
-From  <%= author.nationality %>
-CLI   --author <%= switch %>
+From       <%= author.nationality %>
+Bitrates   <%= author.available_bitrates.join(", ") %>
+CLI        --author <%= switch %>
