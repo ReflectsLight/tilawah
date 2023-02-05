@@ -16,7 +16,7 @@ class Pull < Command
     interrupt ||= nil
     res = http.get http_path(author, surah_no, ayah_no)
     write(res, fs_path(author, surah_no, ayah_no), interrupt)
-    sleep 0.5
+    sleep(options.cooldown)
   rescue Interrupt
     line.end.rewind.print("Wait for a graceful exit").end
     interrupt = true
