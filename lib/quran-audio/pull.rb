@@ -2,6 +2,7 @@ require_relative "command"
 class Pull < Command
   require "net/http"
   require "fileutils"
+  require_relative "pull/authors"
   include FileUtils
 
   attr_reader :http
