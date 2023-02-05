@@ -33,7 +33,7 @@ class Pull < Command
   end
 
   def bitrate
-    options.bitrate || author.default_bitrate
+    options.bitrate || author.audio.default_bitrate
   end
 
   def exist?(surah_no, ayah_no)
