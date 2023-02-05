@@ -17,7 +17,7 @@ class Pull::Authors
   private
 
   def render
-    Ryo.each(cmd.authors).flat_map do |switch, author|
+    Ryo.each(cmd.authors).map do |switch, author|
       ERB.new(template).result_with_hash({switch:, author:})
     end.join("\n").each_line
   end
