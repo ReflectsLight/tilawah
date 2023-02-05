@@ -8,7 +8,7 @@ require File.join(lib_dir, "pull")
 options = Ryo(author: "alafasy", bitrate: "128", surah: (1..114).to_a, cooldown: 0.5)
 begin
   op = nil
-  OptionParser.new do |o|
+  OptionParser.new(nil, 26, " " * 2) do |o|
     op = o
     o.banner = "Usage: quran-audio pull [OPTIONS]"
     o.on("-aNAME", "--author NAME", "An author's name (default: alafasy)")
