@@ -19,8 +19,8 @@ end
 case ARGV[0]
 when "pull"
   wait spawn(libexec_dir, "pull", *ARGV[1..-1])
-when "create-timestamps"
-  wait spawn(libexec_dir, "create-timestamps", *ARGV[1..-1])
+when "timestamps"
+  wait spawn(libexec_dir, "timestamps", *ARGV[1..-1])
 else
-  Process.wait Process.spawn(RbConfig.ruby, File.join(libexec_dir, "help"))
+  warn "Usage: quran-audio pull|timestamps|help [options]"
 end
