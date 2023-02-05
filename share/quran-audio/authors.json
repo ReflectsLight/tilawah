@@ -7,7 +7,7 @@
       "path": "/data/Alafasy_%{bitrate}kbps/"
     },
     "dest": {
-      "dir": "%{share_dir}/alafasy/"
+      "dir": "%{share_dir}/recitations/alafasy/"
     }
   },
   "aziz_alili": {
@@ -18,7 +18,7 @@
       "path": "/data/aziz_alili_%{bitrate}kbps/"
     },
     "dest": {
-      "dir": "%{share_dir}/aziz_alili/"
+      "dir": "%{share_dir}/recitations/aziz_alili/"
     }
   },
   "abdullah_awad_al_juhany": {
@@ -29,7 +29,7 @@
       "path": "/data/Abdullaah_3awwaad_Al-Juhaynee_%{bitrate}kbps/"
     },
     "dest": {
-      "dir": "%{share_dir}/abdullah_awad_al_juhany/"
+      "dir": "%{share_dir}/recitations/abdullah_awad_al_juhany/"
     }
   },
   "ahmad_bin_ali_al_ajmi": {
@@ -40,7 +40,7 @@
       "path": "/data/ahmed_ibn_ali_al_ajamy_%{bitrate}kbps/"
     },
     "dest": {
-      "dir": "%{share_dir}/ahmad_bin_ali_al_ajmi/"
+      "dir": "%{share_dir}/recitations/ahmad_bin_ali_al_ajmi/"
     }
   }
 }
