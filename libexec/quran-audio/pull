@@ -28,25 +28,28 @@ end
 
 ##
 # main
-cmd = Pull.new(options)
-if cmd.options.authors
-  puts
-  puts Pull::Authors.new(cmd)
-  puts
-  exit
-end
-
-skipped = false
-options.surah.each do |surah_no|
-  1.upto(cmd.count[surah_no]) do |ayah_no|
-    if cmd.exist?(surah_no, ayah_no)
-      skipped = true
-      next
-    end
-    cmd.pull(surah_no.to_s, ayah_no.to_s)
-    percent = sprintf("%.2f", (ayah_no / cmd.count[surah_no].to_f) * 100)
-    cmd.line.rewind.print "Surah #{surah_no} [#{percent}%]"
-    skipped = false
+def main(options)
+  cmd = Pull.new(options)
+  if cmd.options.authors
+    puts
+    puts Pull::Authors.new(cmd)
+    puts
+    return
   end
-  cmd.line.end unless skipped
+
+  skipped = false
+  options.surah.each do |surah_no|
+    1.upto(cmd.count[surah_no]) do |ayah_no|
+      if cmd.exist?(surah_no, ayah_no)
+        skipped = true
+        next
+      end
+      cmd.pull(surah_no.to_s, ayah_no.to_s)
+      percent = sprintf("%.2f", (ayah_no / cmd.count[surah_no].to_f) * 100)
+      cmd.line.rewind.print "Surah #{surah_no} [#{percent}%]"
+      skipped = false
+    end
+    cmd.line.end unless skipped
+  end
 end
+main(options)
