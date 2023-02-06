@@ -38,13 +38,13 @@ end
 
 skipped = false
 options.surah.each do |surah_no|
-  1.upto(cmd.surah_size[surah_no]) do |ayah_no|
+  1.upto(cmd.count[surah_no]) do |ayah_no|
     if cmd.exist?(surah_no, ayah_no)
       skipped = true
       next
     end
     cmd.pull(surah_no.to_s, ayah_no.to_s)
-    percent = sprintf("%.2f", (ayah_no / cmd.surah_size[surah_no].to_f) * 100)
+    percent = sprintf("%.2f", (ayah_no / cmd.count[surah_no].to_f) * 100)
     cmd.line.rewind.print "Surah #{surah_no} [#{percent}%]"
     skipped = false
   end
