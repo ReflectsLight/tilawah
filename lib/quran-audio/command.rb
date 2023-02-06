@@ -1,4 +1,4 @@
-class Command
+module Command
   require "ryo"
   require "io/line"
   require "json"

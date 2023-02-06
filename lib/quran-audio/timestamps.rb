@@ -1,8 +1,10 @@
-require_relative "command"
-class Timestamps < Command
+class Timestamps
   require "mp3info"
   require "ryo"
   require "json"
+  require_relative "command"
+  include Command
+
   attr_reader :options
 
   def initialize(options)
