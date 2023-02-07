@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.summary = "quran-audio is a utility for downloading recitations of the holy book: The Quran"
   gem.description = gem.summary
   gem.add_runtime_dependency "ruby-mp3info", "~> 0.8"
-  gem.add_runtime_dependency "optparse", "~> 0.5"
+  gem.add_runtime_dependency "optparse", "~> 0.3"
   gem.add_runtime_dependency "ryo.rb", "~> 0.3"
   gem.add_runtime_dependency "io-line.rb", "~> 0.1"
   gem.add_runtime_dependency "paint", "~> 2.3"
