@@ -7,6 +7,13 @@ class Timestamps
 
   attr_reader :options
 
+  def self.cli(argv)
+    options = Ryo({author: "*"})
+    OptionParser.new do |o|
+      o.on("-aAUTHOR", "--author NAME", "An author's name (default: all authors)")
+    end.parse(ARGV, into: options)
+  end
+
   def initialize(options)
     @timestamps = []
     @options = options

@@ -4,16 +4,9 @@ require File.join(lib_dir, "timestamps")
 require "optparse"
 
 ##
-# CLI options
-options = Ryo({author: "*"})
-OptionParser.new do |o|
-  o.on("-aAUTHOR", "--author NAME", "An author's name (default: all authors)")
-end.parse(ARGV, into: options)
-
-##
 # main
-def main(options)
-  cmd = Timestamps.new(options)
+def main(argv)
+  cmd = Timestamps.new(Timestamps.cli(argv)
   Dir.glob(File.join(cmd.author_dir, "*")).each do |dir|
     Dir.glob(File.join(dir, "*.mp3")).each do
       cmd.push(_1)
@@ -21,4 +14,4 @@ def main(options)
     cmd.save(dir)
   end
 end
-main(options)
+main(ARGV)

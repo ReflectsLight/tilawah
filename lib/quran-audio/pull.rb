@@ -1,4 +1,5 @@
 class Pull
+  require "optparse"
   require "net/http"
   require "fileutils"
   require_relative "command"
@@ -8,6 +9,24 @@ class Pull
 
   attr_reader :http
   attr_reader :options
+
+  def self.cli(argv)
+    options = Ryo(author: "alafasy", bitrate: nil, surah: (1..114).to_a, cooldown: 0.5)
+    op = nil
+    OptionParser.new(nil, 26, " " * 2) do |o|
+      op = o
+      o.banner = "Usage: quran-audio pull [OPTIONS]"
+      o.on("-aNAME", "--author NAME", "An author's name (default: alafasy)")
+      o.on("-bBITRATE", "--bitrate BITRATE", "An MP3 bitrate (default: highest available)")
+      o.on("-sSURAH", "--surah SURAH", "A comma-separated list of surahs (default: all surahs)", Array)
+      o.on("-cNUMBER", "--cooldown NUMBER", "A number of second(s) to wait between requests (default: 0.5)", Float)
+      o.on("-l", "--authors", "Show the available authors")
+      o.on("-h", "--help", "Show help") do
+        puts op.help
+        exit(0)
+      end
+    end.parse(argv, into: options)
+  end
 
   def initialize(options)
     @http = Net::HTTP.new("everyayah.com", 443).tap { _1.use_ssl = true }
@@ -24,7 +43,7 @@ class Pull
     interrupt = true
     retry
   rescue SocketError, SystemCallError, Net::OpenTimeout => e
-    line.end.rewind.print("#{e.class}: retry").end
+    line.end.rewind.print("#{e.class}: retry")
     interrupt = nil
     retry
   end
