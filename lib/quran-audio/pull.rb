@@ -35,7 +35,7 @@ class Pull
 
   def pull(surah_no, ayah_no)
     interrupt ||= nil
-    res = http.get http_path(surah_no, ayah_no)
+    res = http.get http_path(surah_no, ayah_no), http_headers
     write(res, fs_path(surah_no, ayah_no), interrupt)
     sleep(options.cooldown)
   rescue Interrupt
@@ -67,6 +67,12 @@ class Pull
     ayah_no   = ayah_no.to_s.rjust(3, "0")
     http_file ="#{surah_no}#{ayah_no}.mp3"
     File.join format(author.http.path, bitrate:), http_file
+  end
+
+  def http_headers
+    @http_headers ||= {
+      "user-agent" => "quran-audio (https://github.com/ReflectsLight/quran-audio#readme)"
+    }
   end
 
   def fs_path(surah_no, ayah_no)
