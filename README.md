@@ -37,6 +37,6 @@ First and foremost, Alhamdulillah.
 * Thanks to the [everyayah.com](https://everyayah.com) website
   for providing the audio files that this utility downloads.
 
-## LICENSE
+## License
 
-BSD0L
+Public domain.
