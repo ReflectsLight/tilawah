@@ -1,11 +1,11 @@
-## About
+__About__
 
-quran-audio is a utility for downloading recitations of the holy book, The Quran,
-from [everyayah.com](https://everyayah.com). The content is provided as a set of MP3
-files (one per ayah), and recitations from multiple authors are available to choose
-from.
+quran-audio is a user-friendly utility that lets you download
+recitations of The Quran from [everyayah.com](https://everyayah.com).
+With numerous reciters and separate MP3 files for each ayah, you can
+easily download and listen to your favorite recitations.
 
-## Usage
+__Usage__
 
 ```
 Usage: quran-audio pull [OPTIONS]
@@ -17,26 +17,28 @@ Usage: quran-audio pull [OPTIONS]
   -h, --help                 Show help
 ```
 
-## Authors
-
-The list of recitation authors:
+__Reciters__
 
 * Mishari bin Rashed Alafasy
 * Aziz Alilli
 * Abdullah Awad Al Juhany
 * Ahmad bin Ali Al-Ajmi
 
-See [share/quran-audio/authors.json](share/quran-audio/authors.json) for more information
-about the authors.
+See
+[share/quran-audio/authors.json](share/quran-audio/authors.json)
+for more information about the reciters.
 
 ## Thanks
 
 First and foremost, Alhamdulillah.
 
-* Thanks to the recitation authors (listed above).
-* Thanks to the [everyayah.com](https://everyayah.com) website
-  for providing the audio files that this utility downloads.
+* Thanks to the [everyayah.com](https://everyayah.com) website.
+* With thanks, and credit:
+  * Mishari bin Rashed Alafasy
+  * Aziz Alilli
+  * Abdullah Awad Al Juhany
+  * Ahmad bin Ali Al-Ajmi
 
 ## License
 
-Public domain.
+The "source code" is released under the [GPL](./LICENSE) license.
