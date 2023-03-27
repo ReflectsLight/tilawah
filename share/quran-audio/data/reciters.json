@@ -1,0 +1,34 @@
+{
+  "alafasy": {
+    "name": "Mishari bin Rashed Alafasy",
+    "nationality": "Kuwait",
+    "available_bitrates": [128, 64],
+    "default_bitrate": 128,
+    "download_path": "/data/Alafasy_%{bitrate}kbps/",
+    "dest_dir": "%{share_dir}/recitations/alafasy/"
+  },
+  "aziz_alili": {
+    "name": "Aziz Alili",
+    "nationality": "Macedonia",
+    "available_bitrates": [128],
+    "default_bitrate": 128,
+    "download_path": "/data/aziz_alili_%{bitrate}kbps/",
+    "dest_dir": "%{share_dir}/recitations/aziz_alili/"
+  },
+  "abdullah_awad_al_juhany": {
+    "name": "Abdullah Awad Al Juhany",
+    "nationality": "Saudi Arabia",
+    "available_bitrates": [128],
+    "default_bitrate": 128,
+    "download_path": "/data/Abdullaah_3awwaad_Al-Juhaynee_%{bitrate}kbps/",
+    "dest_dir": "%{share_dir}/recitations/abdullah_awad_al_juhany/"
+  },
+  "ahmad_bin_ali_al_ajmi": {
+    "name": "Ahmad bin Ali Al-Ajmi",
+    "nationality": "Saudi Arabia",
+    "available_bitrates": [128],
+    "default_bitrate": 128,
+    "download_path": "/data/ahmed_ibn_ali_al_ajamy_%{bitrate}kbps/",
+    "dest_dir": "%{share_dir}/recitations/ahmad_bin_ali_al_ajmi/"
+  }
+}

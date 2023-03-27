@@ -1,20 +1,22 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 lib_dir = File.realpath File.join(__dir__, "..", "..", "lib", "quran-audio")
 require File.join(lib_dir, "pull")
 
 ##
 # main
 def main(argv)
-  cmd = Pull.new(Pull.cli(argv))
-  if cmd.options.authors
+  cmd = Pull.new(argv)
+  if cmd.options.print
     puts
-    puts Pull::Authors.new(cmd)
+    puts ReciterIndex.new(cmd)
     puts
     return
   end
 
   skipped = false
-  options.surah.each do |surah_no|
+  cmd.options.surah.each do |surah_no|
     1.upto(cmd.count[surah_no]) do |ayah_no|
       if cmd.exist?(surah_no, ayah_no)
         skipped = true

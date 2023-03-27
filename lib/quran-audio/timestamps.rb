@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Timestamps
   require "mp3info"
   require "ryo"
@@ -8,9 +10,9 @@ class Timestamps
   attr_reader :options
 
   def self.cli(argv)
-    options = Ryo({author: "*"})
+    options = Ryo({reciter: "*"})
     OptionParser.new do |o|
-      o.on("-aAUTHOR", "--author NAME", "An author's name (default: all authors)")
+      o.on("-r NAME", "--reciter NAME", "A reciter's name")
     end.parse(ARGV, into: options)
   end
 
@@ -37,7 +39,7 @@ class Timestamps
     @timestamps = []
   end
 
-  def author_dir
-    @author_dir ||= File.join(share_dir, "recitations", options.author)
+  def reciter_dir
+    @reciter_dir ||= File.join(share_dir, "recitations", options.reciter)
   end
 end

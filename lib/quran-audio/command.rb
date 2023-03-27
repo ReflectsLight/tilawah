@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Command
   require "ryo"
   require "io/line"
@@ -26,10 +28,10 @@ module Command
 
   ##
   # @return [Ryo::Object]
-  #  Returns a Ryo object that holds all known authors.
-  def authors
-    @authors ||= Ryo.from(
-      JSON.parse File.binread(File.join(data_dir, "authors.json"))
+  #  Returns a Ryo object that holds all known reciters.
+  def reciters
+    @reciters ||= Ryo.from(
+      JSON.parse(File.binread(File.join(data_dir, "reciters.json")))
     )
   end
 
@@ -38,7 +40,7 @@ module Command
   #  Returns a Ryo object that maps a surah number to its ayah count.
   def count
     @count ||= Ryo.from(
-      JSON.parse File.binread(File.join(data_dir, "count.json"))
+      JSON.parse(File.binread(File.join(data_dir, "count.json")))
     )
   end
 

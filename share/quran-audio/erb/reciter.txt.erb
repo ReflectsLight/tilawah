@@ -1,0 +1,4 @@
+<%= Paint[reciter.name, :bold] %>
+From       <%= reciter.nationality %>
+Bitrates   <%= reciter.available_bitrates.join(", ") %> (default = <%= reciter.default_bitrate %>)
+CLI        --reciter <%= switch %>

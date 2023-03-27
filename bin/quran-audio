@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 ##
 # Paths
@@ -18,9 +19,9 @@ end
 
 case ARGV[0]
 when "pull"
-  wait spawn(libexec_dir, "pull", *ARGV[1..-1])
+  wait spawn(libexec_dir, "pull", *ARGV[1..])
 when "timestamps"
-  wait spawn(libexec_dir, "timestamps", *ARGV[1..-1])
+  wait spawn(libexec_dir, "timestamps", *ARGV[1..])
 else
-  warn "Usage: quran-audio pull|timestamps|help [options]"
+  warn "Usage: quran-audio pull|timestamps [options]"
 end

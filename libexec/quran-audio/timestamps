@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 lib_dir = File.realpath File.join(__dir__, "..", "..", "lib", "quran-audio")
 require File.join(lib_dir, "timestamps")
 require "optparse"
@@ -6,8 +8,8 @@ require "optparse"
 ##
 # main
 def main(argv)
-  cmd = Timestamps.new(Timestamps.cli(argv)
-  Dir.glob(File.join(cmd.author_dir, "*")).each do |dir|
+  cmd = Timestamps.new(Timestamps.cli(argv))
+  Dir.glob(File.join(cmd.reciter_dir, "*")).each do |dir|
     Dir.glob(File.join(dir, "*.mp3")).each do
       cmd.push(_1)
     end
