@@ -1,32 +1,27 @@
 __About__
 
-quran-audio is a user-friendly utility that lets you download
+quran-audio is a command-line utility that lets you download
 recitations of The Quran from [everyayah.com](https://everyayah.com).
 With numerous reciters and separate MP3 files for each ayah, you can
-easily download and listen to your favorite recitations.
+easily download and listen to your favorite recitations. 
 
 __Usage__
 
 ```
 Usage: quran-audio pull [OPTIONS]
-  -a, --author NAME          An author's name (default: alafasy)
-  -b, --bitrate BITRATE      An MP3 bitrate (default: highest available)
-  -s, --surah SURAH          A comma-separated list of surahs (default: all surahs)
-  -c, --cooldown NUMBER      A number of second(s) to wait between requests (default: 0.5)
-  -l, --authors              Show the available authors
   -h, --help                 Show help
+  -r, --reciter NAME         The name of a reciter
+  -b, --bitrate BITRATE      MP3 bitrate
+  -s, --surah SURAHS         Comma-separated list of surah numbers
+  -c, --cooldown SECONDS     Cooldown period between requests
+  -p, --print                Prints a list of reciters
 ```
 
 __Reciters__
 
-* Mishari bin Rashed Alafasy
-* Aziz Alilli
-* Abdullah Awad Al Juhany
-* Ahmad bin Ali Al-Ajmi
-
-See
-[share/quran-audio/authors.json](share/quran-audio/authors.json)
-for more information about the reciters.
+<p align="center">
+  <img src="screenshots/quran_audio.png">
+</p>
 
 ## Thanks
 
