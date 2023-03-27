@@ -9,25 +9,25 @@ __Reciters__
 
 <p align="center">
   <pre>
-                          Mishari bin Rashed Alafasy
-                          From       Kuwait
-                          Bitrates   128, 64 (default = 128)
-                          CLI        --reciter alafasy
-                          
-                          Aziz Alili
-                          From       Macedonia
-                          Bitrates   128 (default = 128)
-                          CLI        --reciter aziz_alili
-                          
-                          Abdullah Awad Al Juhany
-                          From       Saudi Arabia
-                          Bitrates   128 (default = 128)
-                          CLI        --reciter abdullah_awad_al_juhany
-                          
-                          Ahmad bin Ali Al-Ajmi
-                          From       Saudi Arabia
-                          Bitrates   128 (default = 128)
-                          CLI        --reciter ahmad_bin_ali_al_ajmi
+Mishari bin Rashed Alafasy
+From       Kuwait
+Bitrates   128, 64 (default = 128)
+CLI        --reciter alafasy
+
+Aziz Alili
+From       Macedonia
+Bitrates   128 (default = 128)
+CLI        --reciter aziz_alili
+
+Abdullah Awad Al Juhany
+From       Saudi Arabia
+Bitrates   128 (default = 128)
+CLI        --reciter abdullah_awad_al_juhany
+
+Ahmad bin Ali Al-Ajmi
+From       Saudi Arabia
+Bitrates   128 (default = 128)
+CLI        --reciter ahmad_bin_ali_al_ajmi
   </pre>
 </p>
 
