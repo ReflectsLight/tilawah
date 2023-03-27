@@ -5,6 +5,12 @@ recitations of The Quran from [everyayah.com](https://everyayah.com).
 With numerous reciters and separate MP3 files for each ayah, you can
 easily download and listen to your favorite recitations. 
 
+__Reciters__
+
+<p align="center">
+  <img src="screenshots/quran_audio.png">
+</p>
+
 __Usage__
 
 ```
@@ -17,13 +23,7 @@ Usage: quran-audio pull [OPTIONS]
   -p, --print                Prints a list of reciters
 ```
 
-__Reciters__
-
-<p align="center">
-  <img src="screenshots/quran_audio.png">
-</p>
-
-## Thanks
+__Thanks__
 
 First and foremost, Alhamdulillah.
 
@@ -34,6 +34,6 @@ First and foremost, Alhamdulillah.
   * Abdullah Awad Al Juhany
   * Ahmad bin Ali Al-Ajmi
 
-## License
+__License__
 
 The "source code" is released under the [GPL](./LICENSE) license.
