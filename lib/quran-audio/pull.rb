@@ -29,7 +29,7 @@ class Pull
       ["-b BITRATE", "--bitrate BITRATE", "MP3 bitrate"],
       ["-s SURAHS", "--surah SURAHS", "Comma-separated list of surah numbers", Array],
       ["-c SECONDS", "--cooldown SECONDS", "Cooldown period between requests", Float],
-      ["-p", "--print", "Prints a list of reciters"]
+      ["-d", "--display", "Display the list of reciters"]
     ]
   end
 

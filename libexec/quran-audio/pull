@@ -8,7 +8,7 @@ require File.join(lib_dir, "pull")
 # main
 def main(argv)
   cmd = Pull.new(argv)
-  if cmd.options.print
+  if cmd.options.display
     puts
     puts ReciterIndex.new(cmd)
     puts
