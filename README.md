@@ -3,6 +3,9 @@ __About__
 quran-audio is a command-line utility that can download recitations
 of The Quran from
 [everyayah.com](https://everyayah.com).
+There are multiple reciters to choose from, one MP3 file per ayah, and
+the downloaded content is neatly organized on disk (eg
+`<reciter>/<surah_no>/<ayah_no>.mp3`)
 
 __Reciters__
 
