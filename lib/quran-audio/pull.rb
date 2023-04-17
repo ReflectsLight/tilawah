@@ -43,10 +43,10 @@ class Pull
     @options = Pull.cli.parse.(argv)
   end
 
-  def pull(surah_no, ayah_no)
+  def pull(surah, ayah)
     interrupt ||= nil
-    res = http.get http_path(surah_no, ayah_no), http_headers
-    write(res, fs_path(surah_no, ayah_no), interrupt)
+    res = http.get request_path(surah, ayah)
+    store(res, interrupt)
     sleep(options.cooldown)
   rescue Interrupt
     line.end.rewind.print("Wait for a graceful exit").end
@@ -72,29 +72,20 @@ class Pull
 
   private
 
-  def http_path(surah_no, ayah_no)
-    surah_no = surah_no.rjust(3, "0")
-    ayah_no = ayah_no.to_s.rjust(3, "0")
-    http_file = "#{surah_no}#{ayah_no}.mp3"
-    File.join format(reciter.download_path, bitrate:), http_file
+  def request_path(surah, ayah)
+    surah = surah.rjust(3, "0")
+    ayah = ayah.to_s.rjust(3, "0")
+    filename = "#{surah}#{ayah}.mp3"
+    File.join format(reciter.download_path, bitrate:), filename
   end
 
-  def http_headers
-    @http_headers ||= {
-      "user-agent" => "quran-audio (https://github.com/ReflectsLight/quran-audio#readme)"
-    }
-  end
-
-  def fs_path(surah_no, ayah_no)
-    dir = format(reciter.dest_dir, share_dir:)
-    File.join(dir, surah_no.to_s, "#{ayah_no}.mp3")
-  end
-
-  def write(res, fs_file, interrupt)
+  def store(res, interrupt)
     case res
     when Net::HTTPOK
-      mkdir_p File.dirname(fs_file)
-      File.binwrite(fs_file, res.body)
+      dir  = format(reciter.dest_dir, share_dir:)
+      path = File.join(dir, surah_no.to_s, "#{ayah_no}.mp3")
+      mkdir_p File.dirname(path)
+      File.binwrite(path, res.body)
       exit if interrupt
     else
       puts "error #{res.body}"
