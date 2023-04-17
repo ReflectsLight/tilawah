@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+lib_dir = File.join(__dir__, "..", "..", "lib", "quran-audio")
+require File.join(lib_dir, "pull")
+require "erb"
+require "paint"
+
+def render(reciters, template)
+  yield reciters.map { |switch, reciter|
+    ERB.new(template).result_with_hash({switch:, reciter:})
+  }.join("\n").each_line
+end
+
+def center(str)
+  maxs = str.max_by(&:size).size
+  size = IO.console.winsize[1]
+  cols = (size - maxs + 3) / 2
+  str.map { (" " * cols) + _1 }.join
+end
+
+def main(argv)
+  cmd = Pull.new(argv)
+  erb = File.binread File.join(cmd.share_dir, "erb", "reciter.txt.erb")
+  render(Ryo.each(cmd.reciters), erb) { puts center(_1) }
+end
+main(ARGV)

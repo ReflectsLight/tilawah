@@ -1,27 +1,13 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
-
-##
-# Paths
-libexec_dir = File.realpath(File.join(__dir__, "..", "libexec", "quran-audio"))
-
-##
-# Utils
-def spawn(libexec_dir, exec, *args)
-  Process.spawn File.join(libexec_dir, exec), *args
-end
-
-def wait(pid)
-  Process.wait(pid)
-rescue Interrupt
-  retry
-end
+lib_dir =File.join(__dir__, "..", "lib", "quran-audio")
+require File.join(lib_dir, "libexec")
 
 case ARGV[0]
 when "pull"
-  wait spawn(libexec_dir, "pull", *ARGV[1..])
+  wait spawn("pull", *ARGV[1..])
 when "timestamps"
-  wait spawn(libexec_dir, "timestamps", *ARGV[1..])
+  wait spawn("timestamps", *ARGV[1..])
 else
   warn "Usage: quran-audio pull|timestamps [options]"
 end

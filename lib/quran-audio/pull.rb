@@ -5,7 +5,6 @@ class Pull
   require "net/http"
   require "fileutils"
   require_relative "command"
-  require_relative "reciter_index"
   include FileUtils
   include Command
 
