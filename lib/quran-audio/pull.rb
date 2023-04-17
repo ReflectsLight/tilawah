@@ -46,7 +46,7 @@ class Pull
   def pull(surah, ayah)
     interrupt ||= nil
     res = http.get request_path(surah, ayah)
-    store(res, surah, ayah, interrupt)
+    store(res, "#{surah}/#{ayah}.mp3", interrupt)
     sleep(options.cooldown)
   rescue Interrupt
     line.end.rewind.print("Wait for a graceful exit").end
@@ -81,11 +81,11 @@ class Pull
     File.join format(reciter.request_path, bitrate:), filename
   end
 
-  def store(res, surah, ayah, interrupt)
+  def store(res, filename, interrupt)
     case res
     when Net::HTTPOK
       dir = format(reciter.dest_dir, share_dir:)
-      path = File.join(dir, surah.to_s, "#{ayah}.mp3")
+      path = File.join(dir, filename)
       mkdir_p File.dirname(path)
       File.binwrite(path, res.body)
       exit if interrupt
