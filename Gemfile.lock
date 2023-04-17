@@ -29,7 +29,6 @@ PATH
       paint (~> 2.3)
       ruby-mp3info (~> 0.8)
       ryo.rb (~> 0.3)
-      standard (~> 1.25)
 
 GEM
   remote: https://rubygems.org/
@@ -77,6 +76,7 @@ DEPENDENCIES
   optparse!
   quran-audio!
   ryo.rb (~> 0.3)!
+  standard (~> 1.25)
 
 BUNDLED WITH
    2.4.1
