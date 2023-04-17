@@ -50,7 +50,6 @@ __CLI__
     -b, --bitrate BITRATE      MP3 bitrate
     -s, --surah SURAHS         Comma-separated list of surah numbers
     -c, --cooldown SECONDS     Cooldown period between requests
-    -d, --display              Display the list of reciters
 
 __Thanks__
 

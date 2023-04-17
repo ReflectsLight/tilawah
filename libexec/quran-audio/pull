@@ -1,17 +1,12 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 lib_dir = File.join(__dir__, "..", "..", "lib", "quran-audio")
-require File.join(lib_dir, "libexec")
 require File.join(lib_dir, "pull")
 
 ##
 # main
 def main(argv)
   cmd = Pull.new(argv)
-  if cmd.options.display
-    wait spawn("print-index", *argv)
-    exit $?.exitstatus
-  end
   skipped = false
   cmd.options.surah.each do |surah_no|
     1.upto(cmd.count[surah_no]) do |ayah_no|

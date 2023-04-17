@@ -6,8 +6,13 @@ require File.join(lib_dir, "libexec")
 case ARGV[0]
 when "pull"
   wait spawn("pull", *ARGV[1..])
+  exit $?.exitstatus
+when "ls"
+  wait spawn("ls", *ARGV[1..])
+  exit $?.exitstatus
 when "timestamps"
   wait spawn("timestamps", *ARGV[1..])
+  exit $?.exitstatus
 else
-  warn "Usage: quran-audio pull|timestamps [options]"
+  warn "Usage: quran-audio pull|ls [OPTIONS]"
 end
