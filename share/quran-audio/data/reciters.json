@@ -30,5 +30,13 @@
     "default_bitrate": 128,
     "request_path": "/data/ahmed_ibn_ali_al_ajamy_%{bitrate}kbps/",
     "dest_dir": "%{share_dir}/recitations/ahmad_bin_ali_al_ajmi/"
+  },
+  "sahl_yassin": {
+    "name": "Sahl Yassin",
+    "nationality": "Saudi Arabia",
+    "available_bitrates": [128],
+    "default_bitrate": 128,
+    "request_path": "/data/Sahl_Yassin_%{bitrate}kbps/",
+    "dest_dir": "%{share_dir}/recitations/sahl_yassin/"
   }
 }

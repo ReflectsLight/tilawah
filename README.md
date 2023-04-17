@@ -40,6 +40,12 @@ __Reciters__
     <td>128 (default = 128)</td>
     <td>--reciter ahmad_bin_ali_al_ajmi</td>
   </tr>
+  <tr>
+    <td>Sahl Yassin</td>
+    <td>Saudi Arabia</td>
+    <td>128 (default = 128)</td>
+    <td>--reciter sahl_yassin</td>
+  </tr>
 </table>
 
 __CLI__
