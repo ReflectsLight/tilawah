@@ -76,7 +76,7 @@ class Pull
     surah = surah.rjust(3, "0")
     ayah = ayah.to_s.rjust(3, "0")
     filename = "#{surah}#{ayah}.mp3"
-    File.join format(reciter.download_path, bitrate:), filename
+    File.join format(reciter.request_path, bitrate:), filename
   end
 
   def store(res, interrupt)
