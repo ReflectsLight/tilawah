@@ -67,7 +67,8 @@ First and foremost, Alhamdulillah.
   * Aziz Alilli
   * Abdullah Awad Al Juhany
   * Ahmad bin Ali Al-Ajmi
-
+  * Sahl Yassin
+  
 __License__
 
 The "source code" is released under the [GPL](./LICENSE) license.
