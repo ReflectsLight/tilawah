@@ -17,5 +17,6 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "ryo.rb", "~> 0.3"
   gem.add_runtime_dependency "io-line.rb", "~> 0.1"
   gem.add_runtime_dependency "paint", "~> 2.3"
+  gem.add_runtime_dependency "json", "= 2.6.1"
   gem.add_runtime_dependency "standard", "~> 1.25"
 end
