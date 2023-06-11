@@ -20,9 +20,14 @@ def center(str)
 end
 
 def main(argv)
-  share_dir = Settings.get_share_dir.()
-  reciters = Settings.get_reciters.()
-  erb = File.binread File.join(share_dir, "erb", "reciter.txt.erb")
-  render(Ryo.each(reciters), erb) { puts center(_1) }
+  if argv.include?("-h")
+    warn "Usage: quran-audio ls [OPTIONS]\n" \
+         "  -h, --help Show help"
+  else
+    share_dir = Settings.get_share_dir.()
+    reciters = Settings.get_reciters.()
+    erb = File.binread File.join(share_dir, "erb", "reciter.txt.erb")
+    render(Ryo.each(reciters), erb) { puts center(_1) }
+  end
 end
 main(ARGV)
