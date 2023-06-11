@@ -4,9 +4,9 @@ class Pull
   require "optparse"
   require "net/http"
   require "fileutils"
-  require_relative "command"
+  require_relative "cmd"
   include FileUtils
-  include Command
+  include Cmd
 
   attr_reader :http,
               :options

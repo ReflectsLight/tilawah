@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Command
+module Cmd
   require "ryo"
   require "io/line"
   require "json"
