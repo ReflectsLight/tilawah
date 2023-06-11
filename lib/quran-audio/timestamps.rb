@@ -4,8 +4,8 @@ class Timestamps
   require "mp3info"
   require "ryo"
   require "json"
-  require_relative "command"
-  include Command
+  require_relative "cmd"
+  include Cmd
 
   attr_reader :options
 
