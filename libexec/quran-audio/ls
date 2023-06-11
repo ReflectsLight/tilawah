@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 lib_dir = File.join(__dir__, "..", "..", "lib", "quran-audio")
 require File.join(lib_dir, "pull")
+require File.join(lib_dir, "settings")
 require "erb"
 require "paint"
 
@@ -19,8 +20,9 @@ def center(str)
 end
 
 def main(argv)
-  cmd = Pull.new(argv)
-  erb = File.binread File.join(cmd.share_dir, "erb", "reciter.txt.erb")
-  render(Ryo.each(cmd.reciters), erb) { puts center(_1) }
+  share_dir = Settings.get_share_dir.()
+  reciters = Settings.get_reciters.()
+  erb = File.binread File.join(share_dir, "erb", "reciter.txt.erb")
+  render(Ryo.each(reciters), erb) { puts center(_1) }
 end
 main(ARGV)
