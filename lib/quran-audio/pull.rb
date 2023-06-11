@@ -43,19 +43,16 @@ class Pull
     @options = Pull.cli.parse.(argv)
   end
 
-  def pull(surah, ayah)
-    interrupt ||= nil
+  def pull(surah, ayah, interrupt = false)
     res = http.get request_path(surah, ayah)
     store(res, "#{surah}/#{ayah}.mp3", interrupt)
     sleep(options.cooldown)
   rescue Interrupt
     line.end.rewind.print("Wait for a graceful exit").end
-    interrupt = true
-    retry
+    pull(surah, ayah, true)
   rescue SocketError, SystemCallError, Net::OpenTimeout => e
     line.end.rewind.print("#{e.class}: retry")
-    interrupt = nil
-    retry
+    interrupt ? throw(:interrupt, true) : pull(surah, ayah)
   end
 
   def reciter
@@ -88,7 +85,7 @@ class Pull
       path = File.join(dir, filename)
       mkdir_p File.dirname(path)
       File.binwrite(path, res.body)
-      exit if interrupt
+      throw(:interrupt, true) if interrupt
     else
       puts "error #{res.body}"
     end

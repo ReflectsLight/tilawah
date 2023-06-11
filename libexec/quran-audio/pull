@@ -22,4 +22,5 @@ def main(argv)
     cmd.line.end unless skipped
   end
 end
-main(ARGV)
+interrupt = catch(:interrupt) { main(ARGV) }
+exit(1) if interrupt
