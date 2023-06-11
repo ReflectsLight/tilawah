@@ -43,13 +43,13 @@ class Pull
     @options = Pull.cli.parse.(argv)
   end
 
-  def pull(surah, ayah, interrupt = false)
+  def pull(surah, ayah, interrupt: false)
     res = http.get request_path(surah, ayah)
-    store(res, "#{surah}/#{ayah}.mp3", interrupt)
+    store(res, "#{surah}/#{ayah}.mp3", interrupt:)
     sleep(options.cooldown)
   rescue Interrupt
     line.end.rewind.print("Wait for a graceful exit").end
-    pull(surah, ayah, true)
+    pull(surah, ayah, interrupt: true)
   rescue SocketError, SystemCallError, Net::OpenTimeout => e
     line.end.rewind.print("#{e.class}: retry")
     interrupt ? throw(:interrupt, true) : pull(surah, ayah)
@@ -78,7 +78,7 @@ class Pull
     File.join format(reciter.request_path, bitrate:), filename
   end
 
-  def store(res, filename, interrupt)
+  def store(res, filename, interrupt:)
     case res
     when Net::HTTPOK
       dir = format(reciter.dest_dir, share_dir:)
