@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
-lib_dir =File.join(__dir__, "..", "lib", "quran-audio")
+
+lib_dir = File.join(__dir__, "..", "lib", "quran-audio")
 require File.join(lib_dir, "libexec")
 
 case ARGV[0]
@@ -10,8 +11,8 @@ when "pull"
 when "ls"
   wait spawn("ls", *ARGV[1..])
   exit $?.exitstatus
-when "timestamps"
-  wait spawn("timestamps", *ARGV[1..])
+when "time_slots"
+  wait spawn("time_slots", *ARGV[1..])
   exit $?.exitstatus
 else
   warn "Usage: quran-audio pull|ls [OPTIONS]"

@@ -17,7 +17,7 @@ class Pull
         ["-r NAME", "--reciter NAME", "The name of a reciter"],
         ["-b BITRATE", "--bitrate BITRATE", "MP3 bitrate"],
         ["-s SURAHS", "--surah SURAHS", "Comma-separated list of surah numbers", Array],
-        ["-c SECONDS", "--cooldown SECONDS", "Cooldown period between requests", Float],
+        ["-c SECONDS", "--cooldown SECONDS", "Cooldown period between requests", Float]
       ],
       defaults: {
         reciter: "alafasy",
