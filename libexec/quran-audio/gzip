@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+lib_dir = File.join(__dir__, "..", "..", "lib", "quran-audio")
+require File.join(lib_dir, "settings")
+
+require "ryo"
+require "zlib"
+require "optparse"
+
+def cli(argv)
+  Ryo.from({
+    options: [
+      ["-r NAME", "--reciter NAME", "The name of a reciter"]
+    ],
+    defaults: {reciter: "*"},
+    parser: Ryo.fn {
+      op = nil
+      into = Ryo.dup(defaults)
+      OptionParser.new(nil, 26, " " * 2) do |o|
+        op = o
+        op.banner = "Usage: quran-audio gzip [OPTIONS]"
+        op.on("-h", "--help", "Show help") { puts(op.help).then { exit } }
+        options.each { op.on(*_1) }
+      end.parse(argv, into:).then { into }
+    }
+  })
+end
+
+def main(argv)
+  options = cli(argv).parser.call
+  share_dir = Settings.get_share_dir.call
+  mp3_glob = File.join(share_dir, "recitations", options.reciter, "[0-9]*", "*.mp3")
+  Dir.glob(mp3_glob).each do |mp3|
+    gzip = "#{mp3}.gz"
+    Zlib::GzipWriter.open(gzip) { _1.write File.binread(mp3) }
+    print "Write: #{gzip.sub(Dir.getwd + "/", "")}", "\n"
+  end
+end
+main(ARGV)

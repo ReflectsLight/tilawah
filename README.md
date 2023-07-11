@@ -50,12 +50,20 @@ __Reciters__
 
 __CLI__
 
-    Usage: quran-audio pull [OPTIONS]
-    -h, --help                 Show help
-    -r, --reciter NAME         The name of a reciter
-    -b, --bitrate BITRATE      MP3 bitrate
-    -s, --surah SURAHS         Comma-separated list of surah numbers
-    -c, --cooldown SECONDS     Cooldown period between requests
+* Download audio
+
+        Usage: quran-audio pull [OPTIONS]
+        -h, --help                 Show help
+        -r, --reciter NAME         The name of a reciter
+        -b, --bitrate BITRATE      MP3 bitrate
+        -s, --surah SURAHS         Comma-separated list of surah numbers
+        -c, --cooldown SECONDS     Cooldown period between requests
+
+* Compress audio (with gzip)
+
+        Usage: quran-audio gzip [OPTIONS]
+        -h, --help                 Show help
+        -r, --reciter NAME         The name of a reciter
 
 __Thanks__
 
@@ -68,7 +76,7 @@ First and foremost, Alhamdulillah.
   * Abdullah Awad Al Juhany
   * Ahmad bin Ali Al-Ajmi
   * Sahl Yassin
-  
+
 __License__
 
 The "source code" is released under the [GPL](./LICENSE) license.

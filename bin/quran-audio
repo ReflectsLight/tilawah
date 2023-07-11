@@ -11,6 +11,9 @@ when "pull"
 when "ls"
   wait spawn("ls", *ARGV[1..])
   exit $?.exitstatus
+when "gzip"
+  wait spawn("gzip", *ARGV[1..])
+  exit $?.exitstatus
 when "time_slots"
   wait spawn("time_slots", *ARGV[1..])
   exit $?.exitstatus
