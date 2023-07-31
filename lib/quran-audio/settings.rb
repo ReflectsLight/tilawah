@@ -2,9 +2,9 @@
 
 require "ryo"
 Settings = Ryo.from({
-  get_root_dir: Ryo.fn { File.realpath(File.join(__dir__, "..", "..")) },
-  get_share_dir: Ryo.fn { File.join(get_root_dir.(), "share", "quran-audio") },
-  get_data_dir: Ryo.fn { File.join(get_share_dir.(), "data") },
-  get_reciters: Ryo.fn { Ryo.from JSON.parse(File.binread(get_reciters_path.call)) },
-  get_reciters_path: Ryo.fn { File.join(get_data_dir.(), "reciters.json") }
+  root_dir: Ryo.lazy { File.realpath(File.join(__dir__, "..", "..")) },
+  share_dir: Ryo.lazy { File.join(root_dir, "share", "quran-audio") },
+  data_dir: Ryo.lazy { File.join(share_dir, "data") },
+  reciters: Ryo.lazy { Ryo.from JSON.parse(File.binread(reciters_path)) },
+  reciters_path: Ryo.lazy { File.join(data_dir, "reciters.json") }
 })

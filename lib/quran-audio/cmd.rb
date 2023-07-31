@@ -10,28 +10,28 @@ module Cmd
   # @return [String]
   #  Returns the absolute path to the root directory.
   def root_dir
-    Settings.get_root_dir.()
+    Settings.root_dir
   end
 
   ##
   # @return [String]
   #  Returns the absolute path to the share directory.
   def share_dir
-    Settings.get_share_dir.()
+    Settings.share_dir
   end
 
   ##
   # @return [String]
   #  Returns the absolute path to the data directory.
   def data_dir
-    Settings.get_data_dir.()
+    Settings.data_dir
   end
 
   ##
   # @return [Ryo::Object]
   #  Returns a Ryo object that holds all known reciters.
   def reciters
-    Settings.get_reciters.()
+    Settings.reciters
   end
 
   ##

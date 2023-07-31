@@ -29,7 +29,7 @@ end
 
 def main(argv)
   options = cli(argv).parser.call
-  share_dir = Settings.get_share_dir.call
+  share_dir = Settings.share_dir
   mp3_glob = File.join(share_dir, "recitations", options.reciter, "[0-9]*", "*.mp3")
   Dir.glob(mp3_glob).each do |mp3|
     gzip = "#{mp3}.gz"
