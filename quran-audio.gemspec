@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.description = gem.summary
   gem.add_runtime_dependency "ruby-mp3info", "~> 0.8"
   gem.add_runtime_dependency "optparse", "~> 0.3"
-  gem.add_runtime_dependency "ryo.rb", "~> 0.3"
+  gem.add_runtime_dependency "ryo.rb", "~> 0.4"
   gem.add_runtime_dependency "io-line.rb", "~> 0.1"
   gem.add_runtime_dependency "paint", "~> 2.3"
   gem.add_runtime_dependency "json", "= 2.6.1"
