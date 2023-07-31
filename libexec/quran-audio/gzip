@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 lib_dir = File.join(__dir__, "..", "..", "lib", "quran-audio")
-require File.join(lib_dir, "settings")
+require File.join(lib_dir, "path")
 
 require "ryo"
 require "zlib"
@@ -29,7 +29,7 @@ end
 
 def main(argv)
   options = cli(argv).parser.call
-  share_dir = Settings.share_dir
+  share_dir = path.share_dir
   mp3_glob = File.join(share_dir, "recitations", options.reciter, "[0-9]*", "*.mp3")
   Dir.glob(mp3_glob).each do |mp3|
     gzip = "#{mp3}.gz"

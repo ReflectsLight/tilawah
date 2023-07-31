@@ -4,34 +4,34 @@ module Cmd
   require "ryo"
   require "io/line"
   require "json"
-  require_relative "settings"
+  require_relative "path"
 
   ##
   # @return [String]
   #  Returns the absolute path to the root directory.
   def root_dir
-    Settings.root_dir
+    path.root_dir
   end
 
   ##
   # @return [String]
   #  Returns the absolute path to the share directory.
   def share_dir
-    Settings.share_dir
+    path.share_dir
   end
 
   ##
   # @return [String]
   #  Returns the absolute path to the data directory.
   def data_dir
-    Settings.data_dir
+    path.data_dir
   end
 
   ##
   # @return [Ryo::Object]
   #  Returns a Ryo object that holds all known reciters.
   def reciters
-    Settings.reciters
+    Ryo.from JSON.parse(File.binread(path.reciters_path))
   end
 
   ##

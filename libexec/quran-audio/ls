@@ -3,7 +3,7 @@
 
 lib_dir = File.join(__dir__, "..", "..", "lib", "quran-audio")
 require File.join(lib_dir, "pull")
-require File.join(lib_dir, "settings")
+require File.join(lib_dir, "path")
 require "erb"
 require "paint"
 
@@ -25,8 +25,8 @@ def main(argv)
     warn "Usage: quran-audio ls [OPTIONS]\n" \
          "  -h, --help Show help"
   else
-    share_dir = Settings.share_dir
-    reciters = Settings.reciters
+    share_dir = path.share_dir
+    reciters = Ryo.from JSON.parse(File.binread(path.reciters_path))
     erb = File.binread File.join(share_dir, "erb", "reciter.txt.erb")
     render(Ryo.each(reciters), erb) { puts center(_1) }
   end
