@@ -11,8 +11,10 @@ inherit_gem:
 AllCops:
   TargetRubyVersion: 3.2
   Include:
-    - libexec/quran-audio/*
+    - lib/*.rb
+    - lib/quran-audio/*.rb
     - lib/quran-audio/**/*.rb
+    - libexec/quran-audio/*
     - bin/*
 
 ##
@@ -25,6 +27,8 @@ Style/FrozenStringLiteralComment:
 Layout/MultilineMethodCallIndentation:
   Enabled: false
 Layout/ArgumentAlignment:
+  Enabled: false
+Layout/ExtraSpacing:
   Enabled: false
 Style/LambdaCall:
   Enabled: false

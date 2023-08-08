@@ -1,34 +1,10 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-lib_dir = File.join(__dir__, "..", "..", "lib", "quran-audio")
-require File.join(lib_dir, "pull")
-require File.join(lib_dir, "path")
-require "erb"
-require "paint"
-
-def render(reciters, template)
-  yield reciters.map { |switch, reciter|
-    ERB.new(template).result_with_hash({switch:, reciter:})
-  }.join("\n").each_line
-end
-
-def center(str)
-  maxs = str.max_by(&:size).size
-  size = IO.console.winsize[1]
-  cols = (size - maxs + 3) / 2
-  str.map { (" " * cols) + _1 }.join
-end
+lib_dir = File.join(__dir__, "..", "..", "lib")
+require File.join(lib_dir, "cmd", "ls")
 
 def main(argv)
-  if argv.include?("-h")
-    warn "Usage: quran-audio ls [OPTIONS]\n" \
-         "  -h, --help Show help"
-  else
-    share_dir = path.share_dir
-    reciters = Ryo.from JSON.parse(File.binread(path.reciters_path))
-    erb = File.binread File.join(share_dir, "erb", "reciter.txt.erb")
-    render(Ryo.each(reciters), erb) { puts center(_1) }
-  end
+  Cmd::Ls.new(argv).run
 end
 main(ARGV)
