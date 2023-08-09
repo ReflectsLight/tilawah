@@ -64,7 +64,7 @@ __CLI__
         Usage: quran-audio pull [OPTIONS]
 
         Description:
-          Download MP3 files from everyayah.com
+          Download MP3 files from everyayah.com.
 
         Options:
           -a, --author AUTHOR        An author's name
@@ -78,7 +78,7 @@ __CLI__
         Usage: quran-audio ls [OPTIONS]
 
         Description:
-          List recitation authors
+          List recitation authors.
 
         Options:
           -h, --help                 Show help

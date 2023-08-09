@@ -10,7 +10,7 @@ require "paint"
 
 class Cmd::Ls < Cmd
   set_banner usage: "quran-audio ls [OPTIONS]",
-             description: "List recitation authors"
+             description: "List recitation authors."
   include Cmd::Path
 
   def run
