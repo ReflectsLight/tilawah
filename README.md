@@ -1,111 +1,45 @@
-__About__
+## About
 
 quran-audio is a command-line utility that can download recitations
-of The Quran from
+of The Noble Quran from
 [everyayah.com](https://everyayah.com).
-There are multiple reciters to choose from, one MP3 file per ayah, and
-the downloaded content is neatly organized on disk (eg
-`<author>/<surah_no>/<ayah_no>.mp3`)
+The recitations are provided as MP3 files, with one MP3 file per ayah,
+and the MP3 files are organized on disk by author, surah ID, and
+ayah ID (eg `share/quran-audio/mp3/<author>/<surahid>/<ayahid>.mp3`).
+The play time of each ayah is provided by the JSON files in the
+[share/quran-audio/durations/](/share/quran-audio/durations/).
+directory, and are organized by author.
 
-__Authors__
+## Usage
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>From</th>
-    <th>Bitrates</th>
-    <th>CLI</th>
-  </tr>
-  <tr>
-    <td>Mishari bin Rashed Alafasy</td>
-    <td>Kuwait</td>
-    <td>128, 64 (default = 128)</td>
-    <td>--author alafasy</td>
-  </tr>
-  <tr>
-    <td>Aziz Alili</td>
-    <td>Macedonia</td>
-    <td>128 (default = 128)</td>
-    <td>--author aziz_alili</td>
-  </tr>
-  <tr>
-    <td>Abdullah Awad Al Juhany</td>
-    <td>Saudi Arabia</td>
-    <td>128 (default = 128)</td>
-    <td>--author abdullah_awad_al_juhany  </td>
-  </tr>
-  <tr>
-    <td> Ahmad bin Ali Al-Ajmi  </td>
-    <td>Saudi Arabia</td>
-    <td>128 (default = 128)</td>
-    <td>--author ahmad_bin_ali_al_ajmi</td>
-  </tr>
-  <tr>
-    <td>Sahl Yassin</td>
-    <td>Saudi Arabia</td>
-    <td>128 (default = 128)</td>
-    <td>--author sahl_yassin</td>
-  </tr>
-</table>
+The examples assume git and Ruby v3+ are already installed,
+alongside the RubyGem bundler.
 
-__CLI__
+**Clone repository**
 
-* All commands
+    $ git clone https://github.com/ReflectsLight/quran-audio.git
+    $ cd quran-audio
 
-        Usage: quran-audio [COMMAND] [OPTIONS]
+**Install dependencies***
 
-        Commands:
-          pull              Download MP3 files from everyayah.com.
-          ls                List recitation authors.
-          extract-slots     Extract time slots from MP3 files.
+    $ bundle install
 
-* quran-audio pull --help
+**Run bin/quran-audio**
 
-        Usage: quran-audio pull [OPTIONS]
+    $ bundle exec ruby bin/quran-audio --help
 
-        Description:
-          Download MP3 files from everyayah.com.
-
-        Options:
-          -a, --author AUTHOR        An author's name
-          -b, --bitrate BITRATE      MP3 bitrate
-          -s, --surahs NUMBERS       Comma-separated list of surah numbers
-          -d, --delay SECONDS        Delay between requests, in seconds
-          -h, --help                 Show help
-
-* quran-audio ls --help
-
-        Usage: quran-audio ls [OPTIONS]
-
-        Description:
-          List recitation authors.
-
-        Options:
-          -h, --help                 Show help
-
-* quran-audio extract-slots --help
-
-        Usage: quran-audio extract-slots [OPTIONS]
-
-        Description:
-          Extract time slots from MP3 files.
-
-        Options:
-          -a, --author NAME          An author's name
-          -h, --help                 Show help
-
-__Thanks__
+## Thanks
 
 First and foremost, Alhamdulillah.
 
 * Thanks to the [everyayah.com](https://everyayah.com) website.
-* With thanks (and credit) to the authors:
+* With thanks (and credit) to the recitation authors:
   * Mishari bin Rashed Alafasy
   * Aziz Alilli
   * Abdullah Awad Al Juhany
   * Ahmad bin Ali Al-Ajmi
   * Sahl Yassin
 
-__License__
+## License
 
 The "source code" is released under the [GPL](./LICENSE) license.
