@@ -8,7 +8,7 @@ and the MP3 files are organized on disk by author, surah ID, and
 ayah ID (eg `share/quran-audio/mp3/<author>/<surahid>/<ayahid>.mp3`).
 The play time of each ayah is provided by the JSON files in the
 [share/quran-audio/durations/](/share/quran-audio/durations/).
-directory, and are organized by author.
+directory.
 
 ## Usage
 
@@ -20,7 +20,7 @@ alongside the RubyGem bundler.
     $ git clone https://github.com/ReflectsLight/quran-audio.git
     $ cd quran-audio
 
-**Install dependencies***
+**Install dependencies**
 
     $ bundle install
 
