@@ -4,20 +4,18 @@ require "net/http"
 require "fileutils"
 require "json"
 require_relative "../mp3"
-require_relative "../cmd"
-require_relative "../cmd/mixins/path"
 
-class Cmd::Pull < Cmd
+class Command::Pull < Command
   set_banner usage: "quran-audio pull [OPTIONS]",
              description: "Download MP3 files from everyayah.com."
   set_option "-a AUTHOR", "--author AUTHOR", "An author's name"
   set_option "-b BITRATE", "--bitrate BITRATE", "MP3 bitrate"
-  set_option "-s NUMBERS", "--surahs NUMBERS", "Comma-separated list of surah numbers", Array
-  set_option "-d SECONDS", "--delay", "Delay between requests, in seconds", Float
+  set_option "-s NUMBERS", "--surahs NUMBERS", "Comma-separated list of surah IDs", as: Array
+  set_option "-d SECONDS", "--delay", "Delay between requests, in seconds", as: Float
   set_default author: "alafasy", surahs: (1..114).to_a, delay: 0.5
 
   include FileUtils
-  include Cmd::Path
+  include Mixin::Path
 
   attr_reader :http
 
@@ -28,7 +26,7 @@ class Cmd::Pull < Cmd
   end
 
   def run
-    options = parse!(argv)
+    options = parse_options(argv)
     options.help ? show_help : run_command(options)
   end
 

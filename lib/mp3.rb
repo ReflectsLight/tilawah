@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class MP3 < Struct.new(:author, :surah, :ayah, :bitrate, keyword_init: true)
-  require_relative "cmd/mixins/path"
-  include Cmd::Path
+  require_relative "command/mixin/path"
+  include Command::Mixin::Path
 
   def initialize(author:, **kw)
     super(author: authors[author], **kw)

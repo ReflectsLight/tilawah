@@ -2,9 +2,10 @@
 # frozen_string_literal: true
 
 lib_dir = File.join(__dir__, "..", "..", "lib")
-require File.join(lib_dir, "cmd", "ls")
+require File.join(lib_dir, "command")
+require File.join(lib_dir, "command", "ls")
 
 def main(argv)
-  Cmd::Ls.new(argv).run
+  Command::Ls.new(argv).run
 end
 main(ARGV)

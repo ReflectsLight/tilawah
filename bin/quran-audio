@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-lib_dir = File.join(__dir__, "..", "lib", "quran-audio")
+lib_dir = File.join(__dir__, "..", "lib")
 require File.join(lib_dir, "libexec")
 
 case ARGV[0]
@@ -11,13 +11,9 @@ when "pull"
 when "ls"
   wait spawn("ls", *ARGV[1..])
   exit $?.exitstatus
-when "extract-slots"
-  wait spawn("extract-slots", *ARGV[1..])
-  exit $?.exitstatus
 else
   warn "Usage: quran-audio [COMMAND] [OPTIONS]\n\n" \
        "Commands:\n" \
        "  pull              Download MP3 files from everyayah.com.\n" \
        "  ls                List recitation authors.\n" \
-       "  extract-slots     Extract time slots from MP3 files.\n"
 end

@@ -1,20 +1,17 @@
 # frozen_string_literal: true
 
-require_relative "../cmd"
-require_relative "mixins/path"
 require "json"
 require "ryo"
 require "erb"
 require "io/console"
 require "paint"
 
-class Cmd::Ls < Cmd
+class Command::Ls < Command
   set_banner usage: "quran-audio ls [OPTIONS]",
              description: "List recitation authors."
-  include Cmd::Path
 
   def run
-    options = parse!(argv)
+    options = parse_options(argv)
     options.help ? show_help : run_command(options)
   end
 

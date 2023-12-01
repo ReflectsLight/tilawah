@@ -9,12 +9,13 @@ Gem::Specification.new do |gem|
   gem.licenses = ["BSD0L"]
   gem.files = `git ls-files`.split($/)
   gem.require_paths = ["lib"]
-  gem.summary = "quran-audio is command-line utility that downloads recitations " \
-                "The Quran"
+  gem.summary = "quran-audio is command-line utility that downloads recitations of " \
+                "The Noble Quran"
   gem.description = gem.summary
   gem.add_runtime_dependency "ruby-mp3info", "~> 0.8"
   gem.add_runtime_dependency "optparse", "~> 0.3"
   gem.add_runtime_dependency "ryo.rb", "~> 0.4.2"
+  gem.add_runtime_dependency "cmd.rb", "~> 0.1"
   gem.add_runtime_dependency "io-line.rb", "~> 0.1"
   gem.add_runtime_dependency "paint", "~> 2.3"
   gem.add_runtime_dependency "json", "= 2.6.1"
