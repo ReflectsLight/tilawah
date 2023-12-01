@@ -30,7 +30,7 @@ GIT
 PATH
   remote: .
   specs:
-    quran-audio (0.1.0)
+    quran-audio (0.1.1)
       cmd.rb (~> 0.1)
       io-console (= 0.5.11)
       io-line.rb (~> 0.1)
