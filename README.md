@@ -7,7 +7,7 @@ The recitations are provided as MP3 files, with one MP3 file per ayah,
 and the MP3 files are organized on disk by author, surah ID, and
 ayah ID (eg `share/quran-audio/mp3/<author>/<surahid>/<ayahid>.mp3`).
 The play time of each ayah is provided by the JSON files in the
-[share/quran-audio/durations/](/share/quran-audio/durations/).
+[share/quran-audio/durations/](/share/quran-audio/durations/)
 directory.
 
 ## Usage
