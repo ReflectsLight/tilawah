@@ -4,9 +4,8 @@ require "cmd"
 require "ryo"
 require "io/line"
 
-class Command
+class Command < Cmd
   require_relative "command/mixin/path"
-  include Cmd
   include Mixin::Path
 
   private

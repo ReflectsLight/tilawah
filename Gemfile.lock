@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/0x1eef/cmd.rb.git
-  revision: b9771689b1158ffd63ff9f5e49c054b4c6160785
+  revision: a0df4dcb816e9612183fbb53e5a3e3a5754aae00
   specs:
-    cmd.rb (0.2.1)
+    cmd.rb (0.3.1)
       optparse (~> 0.3)
       ryo.rb (~> 0.4)
 
@@ -23,14 +23,14 @@ GIT
 
 GIT
   remote: https://github.com/ruby/optparse.git
-  revision: 366a6a6b569037420013e83ada92012d0c6a2f76
+  revision: acbf6e3e12de4d116f7215b64432f204d293da97
   specs:
-    optparse (0.4.0.pre.1)
+    optparse (0.4.0)
 
 PATH
   remote: .
   specs:
-    quran-audio (0.1.1)
+    quran-audio (0.1.2)
       cmd.rb (~> 0.1)
       io-console (= 0.5.11)
       io-line.rb (~> 0.1)
