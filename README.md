@@ -5,41 +5,43 @@ of The Noble Quran from
 [everyayah.com](https://everyayah.com).
 The recitations are provided as MP3 files, with one MP3 file per ayah,
 and the MP3 files are organized on disk by author, surah ID, and
-ayah ID (eg `share/quran-audio/mp3/<author>/<surahid>/<ayahid>.mp3`).
-The play time of each ayah is provided by the JSON files in the
-[share/quran-audio/durations/](/share/quran-audio/durations/)
-directory.
+ayah ID.
 
 ## Usage
 
-The examples assume git and Ruby v3+ are already installed,
-alongside the RubyGem bundler.
-
-**Clone repository**
-
+    # Clone repository
     $ git clone https://github.com/ReflectsLight/quran-audio.git
     $ cd quran-audio
 
-**Install dependencies**
-
+    # Install dependencies
     $ bundle install
 
-**Run bin/quran-audio**
-
+    # Run bin/quran-audio
     $ bundle exec ruby bin/quran-audio --help
+
+## Format, durations
+
+An ayah from a given author is stored on disk in the following
+format: `share/quran-audio/mp3/<author>/<surahid>/<ayahid>.mp3`. 
+
+The playtime of each ayah is provided by a JSON file in the
+[share/quran-audio/durations/](/share/quran-audio/durations/)
+directory.
 
 ## Thanks
 
-First and foremost, Alhamdulillah.
+Alhamdulillah
 
-* Thanks to the [everyayah.com](https://everyayah.com) website.
-* With thanks (and credit) to the recitation authors:
-  * Mishari bin Rashed Alafasy
-  * Aziz Alilli
-  * Abdullah Awad Al Juhany
-  * Ahmad bin Ali Al-Ajmi
-  * Sahl Yassin
+* Thanks to the [everyayah.com](https://everyayah.com) website
+* Thanks to the reciters
+    * Mishari bin Rashed Alafasy
+    * Aziz Alilli
+    * Abdullah Awad Al Juhany
+    * Ahmad bin Ali Al-Ajmi
+    * Sahl Yassin
 
 ## License
 
-The "source code" is released under the [GPL](./LICENSE) license.
+The "source code" is released under the [GPL](./LICENSE) license
+<br>
+The reciters hold the copyright for the audio files
