@@ -9,6 +9,8 @@ ayah ID.
 
 ## Usage
 
+**Install**
+
     # Clone repository
     $ git clone https://github.com/ReflectsLight/quran-audio.git
     $ cd quran-audio
@@ -19,7 +21,7 @@ ayah ID.
     # Run bin/quran-audio
     $ bundle exec ruby bin/quran-audio --help
 
-## Duration
+**Duration**
 
 An ayah is stored in the following format:
 `share/quran-audio/mp3/<author>/<surahid>/<ayahid>.mp3`. The
