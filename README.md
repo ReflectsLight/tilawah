@@ -19,12 +19,11 @@ ayah ID.
     # Run bin/quran-audio
     $ bundle exec ruby bin/quran-audio --help
 
-## Format, durations
+## Duration
 
-An ayah from a given author is stored on disk in the following
-format: `share/quran-audio/mp3/<author>/<surahid>/<ayahid>.mp3`. 
-
-The playtime of each ayah is provided by a JSON file in the
+An ayah is stored in the following format:
+`share/quran-audio/mp3/<author>/<surahid>/<ayahid>.mp3`. The
+playtime of each ayah is provided by a JSON file in the
 [share/quran-audio/durations/](/share/quran-audio/durations/)
 directory.
 
