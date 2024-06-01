@@ -3,7 +3,7 @@
 quran-audio is a command-line utility that
 can download recitations of The Noble Quran from
 [everyayah.com](https://everyayah.com).
-The recitations are provided as MP3 files -
+The recitations are provided as MP3 files,
 with one MP3 file per ayah.
 
 ## share/
@@ -16,7 +16,7 @@ with one MP3 file per ayah.
   contains recitations by Aziz Abdullah Awad Al Juhany
 * [share/quran-audio/mp3/alajmi/](share/quran-audio/mp3/alajmi/)
   contains recitations by Ahmad bin Ali Al-Ajmi
-* [share/quran-audio/mp3/alajmi/](share/quran-audio/mp3/yassin/)
+* [share/quran-audio/mp3/yassin/](share/quran-audio/mp3/yassin/)
   contains recitations by Sahl Yassin
 
 An example path to the first ayah of Al-Fatihah could be
