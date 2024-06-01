@@ -1,11 +1,10 @@
 ## About
 
-quran-audio is a command-line utility that can download recitations
-of The Noble Quran from
+quran-audio is a command-line utility that
+can download recitations of The Noble Quran from
 [everyayah.com](https://everyayah.com).
-The recitations are provided as MP3 files, with one MP3 file per ayah,
-and the MP3 files are organized on disk by author, surah ID, and
-ayah ID.
+The recitations are provided as MP3 files -
+with one MP3 file per ayah.
 
 ## share/
 
