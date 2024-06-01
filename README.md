@@ -7,25 +7,22 @@ The recitations are provided as MP3 files, with one MP3 file per ayah,
 and the MP3 files are organized on disk by author, surah ID, and
 ayah ID.
 
-## Usage
+## share/
 
-**Install**
+* [share/quran-audio/mp3/alafasy/](share/quran-audio/mp3/alafasy/)
+  contains recitations by Mishari bin Rashed Alafasy
+* [share/quran-audio/mp3/alilli/](share/quran-audio/mp3/alili/)
+  contains recitations by Aziz Alili
+* [share/quran-audio/mp3/aljuhany/](share/quran-audio/mp3/aljuhany/)
+  contains recitations by Aziz Abdullah Awad Al Juhany
+* [share/quran-audio/mp3/alajmi/](share/quran-audio/mp3/alajmi/)
+  contains recitations by Ahmad bin Ali Al-Ajmi
+* [share/quran-audio/mp3/alajmi/](share/quran-audio/mp3/yassin/)
+  contains recitations by Sahl Yassin
 
-    # Clone repository
-    $ git clone https://github.com/ReflectsLight/quran-audio.git
-    $ cd quran-audio
-
-    # Install dependencies
-    $ bundle install
-
-    # Run bin/quran-audio
-    $ bundle exec ruby bin/quran-audio --help
-
-**Duration**
-
-An ayah is stored in the following format:
-`share/quran-audio/mp3/<author>/<surahid>/<ayahid>.mp3`. The
-playtime of each ayah is provided by a JSON file in the
+An example path to the first ayah of Al-Fatihah could be
+[share/quran-audio/mp3/alafasy/1/1.mp3](share/quran-audio/mp3/alafasy/1/1.mp3).
+The playtime of each ayah is provided by a JSON file in the
 [share/quran-audio/durations/](/share/quran-audio/durations/)
 directory.
 
@@ -35,11 +32,6 @@ Alhamdulillah
 
 * Thanks to the [everyayah.com](https://everyayah.com) website
 * Thanks to the reciters
-    * Mishari bin Rashed Alafasy
-    * Aziz Alilli
-    * Abdullah Awad Al Juhany
-    * Ahmad bin Ali Al-Ajmi
-    * Sahl Yassin
 
 ## License
 

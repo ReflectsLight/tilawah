@@ -5,7 +5,7 @@
     "available_bitrates": [128, 64],
     "default_bitrate": 128,
     "remote_path": "/data/Alafasy_%{bitrate}kbps/",
-    "dest_dir": "%{share_dir}/mp3/mishari_alafasy/"
+    "dest_dir": "%{share_dir}/mp3/alafasy/"
   },
   "aziz_alili": {
     "name": "Aziz Alili",
@@ -13,7 +13,7 @@
     "available_bitrates": [128],
     "default_bitrate": 128,
     "remote_path": "/data/aziz_alili_%{bitrate}kbps/",
-    "dest_dir": "%{share_dir}/mp3/aziz_alili/"
+    "dest_dir": "%{share_dir}/mp3/alili/"
   },
   "abdullah_awad_al_juhany": {
     "name": "Abdullah Awad Al Juhany",
@@ -21,7 +21,7 @@
     "available_bitrates": [128],
     "default_bitrate": 128,
     "remote_path": "/data/Abdullaah_3awwaad_Al-Juhaynee_%{bitrate}kbps/",
-    "dest_dir": "%{share_dir}/mp3/abdullah_awad_al_juhany/"
+    "dest_dir": "%{share_dir}/mp3/aljuhany/"
   },
   "ahmad_bin_ali_al_ajmi": {
     "name": "Ahmad bin Ali Al-Ajmi",
@@ -29,7 +29,7 @@
     "available_bitrates": [128],
     "default_bitrate": 128,
     "remote_path": "/data/ahmed_ibn_ali_al_ajamy_%{bitrate}kbps/",
-    "dest_dir": "%{share_dir}/mp3/ahmad_bin_ali_al_ajmi/"
+    "dest_dir": "%{share_dir}/mp3/alajmi/"
   },
   "sahl_yassin": {
     "name": "Sahl Yassin",
@@ -37,6 +37,6 @@
     "available_bitrates": [128],
     "default_bitrate": 128,
     "remote_path": "/data/Sahl_Yassin_%{bitrate}kbps/",
-    "dest_dir": "%{share_dir}/mp3/sahl_yassin/"
+    "dest_dir": "%{share_dir}/mp3/yassin/"
   }
 }
