@@ -10,7 +10,7 @@ with one MP3 file per ayah.
 
 * [share/quran-audio/mp3/alafasy/](share/quran-audio/mp3/alafasy/)
   contains recitations by Mishari bin Rashed Alafasy
-* [share/quran-audio/mp3/alilli/](share/quran-audio/mp3/alili/)
+* [share/quran-audio/mp3/alili/](share/quran-audio/mp3/alili/)
   contains recitations by Aziz Alili
 * [share/quran-audio/mp3/aljuhany/](share/quran-audio/mp3/aljuhany/)
   contains recitations by Aziz Abdullah Awad Al Juhany
