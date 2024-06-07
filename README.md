@@ -19,11 +19,7 @@ The recitations are provided as MP3 files
 * [share/quran-audio/mp3/yassin/](share/quran-audio/mp3/yassin/)
   contains recitations by Sahl Yassin
 
-An example path to the first ayah of Al-Fatihah could be
-[share/quran-audio/mp3/alafasy/1/1.mp3](share/quran-audio/mp3/alafasy/1/1.mp3).
-The playtime of each ayah is provided by a JSON file in the
-[share/quran-audio/durations/](/share/quran-audio/durations/)
-directory.
+An example path: `share/quran-audio/mp3/alafasy/1/1.mp3`.
 
 ## Thanks
 
