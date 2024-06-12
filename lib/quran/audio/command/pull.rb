@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
+require "net/http"
 module Quran::Audio
   class Command::Pull < Command
-    require "net/http"
-    require "fileutils"
-    require "json"
-
     set_banner usage: "quran-audio pull [OPTIONS]",
                description: "Download MP3 files from everyayah.com."
     set_option "-a AUTHOR", "--author AUTHOR", "An author's name"
@@ -14,7 +11,6 @@ module Quran::Audio
     set_option "-d SECONDS", "--delay", "Delay between requests, in seconds", as: Float
     set_default author: "alafasy", surahs: (1..114).to_a, delay: 0.5
 
-    include FileUtils
     attr_reader :http
 
     def initialize(argv)

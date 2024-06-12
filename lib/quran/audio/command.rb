@@ -4,6 +4,7 @@ require "cmd"
 require "ryo"
 require "ryo/json"
 require "io/line"
+require "fileutils"
 
 module Quran::Audio
   class Command < Cmd
@@ -11,6 +12,7 @@ module Quran::Audio
     require_relative "command/ls"
     require_relative "command/pull"
     include Mixin::Path
+    include FileUtils
 
     def method_missing(m, *ary, &b)
       Ryo.property?(options, m) ? options[m] : super
