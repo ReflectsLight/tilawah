@@ -13,21 +13,14 @@ class Command::Ls < Command
   def run
     authors = JSON.parse File.binread(path.authors_file)
     template = File.binread File.join(path.share_dir, "erb", "author.txt.erb")
-    render(authors, template) { puts center(_1) }
+    render(authors, template)
   end
 
   private
 
   def render(authors, template)
-    yield authors.map { |switch, author|
+    puts authors.map { |switch, author|
       ERB.new(template).result_with_hash({switch:, author: Ryo(author)})
-    }.join("\n").each_line
-  end
-
-  def center(str)
-    maxs = str.max_by(&:size).size
-    size = IO.console.winsize[1]
-    cols = (size - maxs + 3) / 2
-    str.map { (" " * cols) + _1 }.join
+    }.join("\n")
   end
 end
