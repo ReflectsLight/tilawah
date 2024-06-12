@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require "erb"
-require "io/console"
-require "paint"
-
 module Quran::Audio
   class Command::Ls < Command
+    require "erb"
+    require "io/console"
+    require "paint"
+
     set_banner usage: "quran-audio ls [OPTIONS]",
                description: "List recitation authors."
 

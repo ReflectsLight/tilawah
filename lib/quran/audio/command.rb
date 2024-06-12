@@ -7,9 +7,9 @@ require "io/line"
 
 module Quran::Audio
   class Command < Cmd
+    require_relative "command/mixin/path"
     require_relative "command/ls"
     require_relative "command/pull"
-    require_relative "command/mixin/path"
     include Mixin::Path
 
     private
