@@ -1,19 +1,17 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-lib_dir = File.join(__dir__, "..", "lib")
-require File.join(lib_dir, "libexec")
-
+libexec = File.realpath File.join(__dir__, "..", "libexec", "quran-audio")
 case ARGV[0]
 when "pull"
-  wait spawn("pull", *ARGV[1..])
-  exit $?.exitstatus
+  Process.spawn File.join(libexec, "pull"), *ARGV[1..]
+  Process.wait
 when "ls"
-  wait spawn("ls", *ARGV[1..])
-  exit $?.exitstatus
+  Process.spawn File.join(libexec, "ls"), *ARGV[1..]
+  Process.wait
 else
   warn "Usage: quran-audio [COMMAND] [OPTIONS]\n\n" \
        "Commands:\n" \
-       "  pull              Download MP3 files from everyayah.com.\n" \
-       "  ls                List recitation authors.\n" \
+       "  pull              Pull MP3 files from everyayah.com\n" \
+       "  ls                List reciters\n" \
 end
