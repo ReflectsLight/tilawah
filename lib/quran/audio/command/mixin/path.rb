@@ -1,8 +1,8 @@
-module Command::Mixin
-  module Path
+class Quran::Audio::Command
+  module Mixin::Path
     def path
       @path ||= Ryo.from({
-        root_dir: Ryo.lazy { File.realpath(File.join(__dir__, "..", "..", "..")) },
+        root_dir: Ryo.lazy { File.realpath(File.join(__dir__, "..", "..", "..", "..", "..")) },
         share_dir: Ryo.lazy { File.join(root_dir, "share", "quran-audio") },
         data_dir: Ryo.lazy { File.join(share_dir, "data") },
         authors_file: Ryo.lazy { File.join(data_dir, "authors.json") },

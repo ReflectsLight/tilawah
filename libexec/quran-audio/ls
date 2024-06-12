@@ -1,11 +1,10 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-lib_dir = File.join(__dir__, "..", "..", "lib")
-require File.join(lib_dir, "command")
-require File.join(lib_dir, "command", "ls")
-
+require "quran/audio"
 def main(argv)
-  Command::Ls.new(argv).run
+  Quran::Audio::Command::Ls
+    .new(argv)
+    .run
 end
 main(ARGV)

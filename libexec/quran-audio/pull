@@ -1,14 +1,11 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-lib_dir = File.join(__dir__, "..", "..", "lib")
-require File.join(lib_dir, "command")
-require File.join(lib_dir, "command", "pull")
-
-##
-# main
+require "quran/audio"
 def main(argv)
-  Command::Pull.new(argv).run
+  Quran::Audio::Command::Pull
+    .new(argv)
+    .run
 end
 interrupt = catch(:interrupt) { main(ARGV) }
 exit(1) if interrupt
