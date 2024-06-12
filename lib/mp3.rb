@@ -28,6 +28,6 @@ class MP3 < Struct.new(:author, :surah, :ayah, :bitrate, keyword_init: true)
   private
 
   def authors
-    @authors ||= Ryo.from JSON.parse(File.binread(path.authors_file))
+    @authors ||= Ryo.from_json_file(path.authors_file)
   end
 end

@@ -2,6 +2,7 @@
 
 require "json"
 require "ryo"
+require "ryo/json"
 require "erb"
 require "io/console"
 require "paint"
@@ -11,7 +12,7 @@ class Command::Ls < Command
              description: "List recitation authors."
 
   def run
-    authors = JSON.parse File.binread(path.authors_file)
+    authors = Ryo.from_json_file(path.authors_file)
     template = File.binread File.join(path.share_dir, "erb", "author.txt.erb")
     render(authors, template)
   end
@@ -19,7 +20,7 @@ class Command::Ls < Command
   private
 
   def render(authors, template)
-    puts authors.map { |switch, author|
+    puts Ryo.each(authors).map { |switch, author|
       ERB.new(template).result_with_hash({switch:, author: Ryo(author)})
     }.join("\n")
   end

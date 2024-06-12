@@ -2,6 +2,7 @@
 
 require "cmd"
 require "ryo"
+require "ryo/json"
 require "io/line"
 
 class Command < Cmd
