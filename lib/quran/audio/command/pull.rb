@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "net/http"
 module Quran::Audio
   class Command::Pull < Command
     set_banner usage: "quran-audio pull [OPTIONS]",

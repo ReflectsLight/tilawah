@@ -5,6 +5,7 @@ require "ryo"
 require "ryo/json"
 require "io/line"
 require "fileutils"
+require "net/http"
 
 module Quran::Audio
   class Command < Cmd
