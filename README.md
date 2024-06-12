@@ -17,6 +17,16 @@ The recitations are provided as MP3 files
 
 An example path: `share/quran-audio/mp3/alafasy/1/1.mp3`.
 
+## Usage
+
+    # Clone
+    git clone https://github.com/ReflectsLight/quran-audio
+    cd quran-audio
+
+    # Install
+    bundle install
+    bundle exec ruby bin/quran-audio --help
+
 ## Thanks
 
 Alhamdulillah
