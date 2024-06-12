@@ -1,12 +1,4 @@
 GIT
-  remote: https://github.com/0x1eef/cmd.rb.git
-  revision: a0df4dcb816e9612183fbb53e5a3e3a5754aae00
-  specs:
-    cmd.rb (0.3.1)
-      optparse (~> 0.3)
-      ryo.rb (~> 0.4)
-
-GIT
   remote: https://github.com/0x1eef/io-line.rb.git
   revision: 04754c6f2ed255bee1fbfdf93e88722b9a784eb5
   tag: v0.1.0
@@ -14,21 +6,14 @@ GIT
     io-line.rb (0.1.0)
       io-console (~> 0.5)
 
-GIT
-  remote: https://github.com/ruby/optparse.git
-  revision: acbf6e3e12de4d116f7215b64432f204d293da97
-  specs:
-    optparse (0.4.0)
-
 PATH
   remote: .
   specs:
     quran-audio (0.2.0)
-      cmd.rb (~> 0.1)
+      cmd.rb (~> 0.5)
       io-console (= 0.5.11)
       io-line.rb (~> 0.1)
       json (= 2.6.1)
-      optparse (~> 0.3)
       paint (~> 2.3)
       ryo.rb (~> 0.5)
 
@@ -36,6 +21,10 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
+    cli-option_parser.rb (0.6.0)
+    cmd.rb (0.5.0)
+      cli-option_parser.rb (~> 0.6)
+      ryo.rb (~> 0.4)
     io-console (0.5.11)
     json (2.6.1)
     language_server-protocol (3.17.0.3)
@@ -74,9 +63,7 @@ PLATFORMS
   x86_64-openbsd
 
 DEPENDENCIES
-  cmd.rb!
   io-line.rb!
-  optparse!
   quran-audio!
   standard (~> 1.25)
 

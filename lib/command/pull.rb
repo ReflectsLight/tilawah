@@ -27,12 +27,6 @@ class Command::Pull < Command
 
   def run
     options = parse_options(argv)
-    options.help ? show_help : run_command(options)
-  end
-
-  private
-
-  def run_command(options)
     surahs  = options.surahs
     author  = options.author
     bitrate = options.bitrate
@@ -46,6 +40,8 @@ class Command::Pull < Command
       line.end
     end
   end
+
+  private
 
   def pull(mp3, delay, interrupt: false)
     res = http.get(mp3.remote_path)

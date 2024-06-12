@@ -11,17 +11,12 @@ class Command::Ls < Command
              description: "List recitation authors."
 
   def run
-    options = parse_options(argv)
-    options.help ? show_help : run_command(options)
-  end
-
-  private
-
-  def run_command(options)
     authors = JSON.parse File.binread(path.authors_file)
     template = File.binread File.join(path.share_dir, "erb", "author.txt.erb")
     render(authors, template) { puts center(_1) }
   end
+
+  private
 
   def render(authors, template)
     yield authors.map { |switch, author|
