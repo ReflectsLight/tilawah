@@ -10,10 +10,6 @@ The recitations are provided as MP3 files
 
 * [share/quran-audio/mp3/alafasy/](share/quran-audio/mp3/alafasy/)
   contains recitations by Mishari bin Rashed Alafasy
-* [share/quran-audio/mp3/alili/](share/quran-audio/mp3/alili/)
-  contains recitations by Aziz Alili
-* [share/quran-audio/mp3/aljuhany/](share/quran-audio/mp3/aljuhany/)
-  contains recitations by Aziz Abdullah Awad Al Juhany
 * [share/quran-audio/mp3/alajmi/](share/quran-audio/mp3/alajmi/)
   contains recitations by Ahmad bin Ali Al-Ajmi
 * [share/quran-audio/mp3/yassin/](share/quran-audio/mp3/yassin/)
