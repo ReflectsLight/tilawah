@@ -1,5 +1,5 @@
 {
-  "mishari_alafasy": {
+  "alafasy": {
     "name": "Mishari bin Rashed Alafasy",
     "nationality": "Kuwait",
     "available_bitrates": [128, 64],
@@ -7,7 +7,7 @@
     "remote_path": "/data/Alafasy_%{bitrate}kbps/",
     "dest_dir": "%{share_dir}/mp3/alafasy/"
   },
-  "ahmad_bin_ali_al_ajmi": {
+  "alajmi": {
     "name": "Ahmad bin Ali Al-Ajmi",
     "nationality": "Saudi Arabia",
     "available_bitrates": [128],
@@ -15,7 +15,7 @@
     "remote_path": "/data/ahmed_ibn_ali_al_ajamy_%{bitrate}kbps/",
     "dest_dir": "%{share_dir}/mp3/alajmi/"
   },
-  "sahl_yassin": {
+  "yassin": {
     "name": "Sahl Yassin",
     "nationality": "Saudi Arabia",
     "available_bitrates": [128],

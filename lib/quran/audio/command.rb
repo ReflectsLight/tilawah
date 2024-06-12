@@ -12,9 +12,22 @@ module Quran::Audio
     require_relative "command/pull"
     include Mixin::Path
 
+    def method_missing(m, *ary, &b)
+      Ryo.property?(options, m) ? options[m] : super
+    end
+
+    def respond_to_missing?(m, p = false)
+      Ryo.property?(options, m) || super
+    end
+
     private
+
     def line
       @line ||= IO::Line.new($stdout)
+    end
+
+    def options
+      @options ||= parse_options(argv)
     end
   end
 end

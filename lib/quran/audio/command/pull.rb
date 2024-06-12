@@ -20,14 +20,10 @@ module Quran::Audio
     def initialize(argv)
       super(argv)
       @http = Net::HTTP.new("everyayah.com", 443).tap { _1.use_ssl = true }
-      @surah_length = JSON.parse File.binread(path.length_file)
+      @surah_length = Ryo.from_json_file path.length_file
     end
 
     def run
-      options = parse_options(argv)
-      surahs  = options.surahs
-      author  = options.author
-      bitrate = options.bitrate
       surahs.each do |surah|
         1.upto(surah_length(surah)) do |ayah|
           mp3 = MP3.new(author:, surah:, ayah:, bitrate:)

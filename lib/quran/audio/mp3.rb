@@ -14,7 +14,7 @@ module Quran::Audio
     end
 
     def remote_path
-      filename = [surah.rjust(3, "0"), ayah.to_s.rjust(3, "0"), ".mp3"].join
+      filename = [surah.to_s.rjust(3, "0"), ayah.to_s.rjust(3, "0"), ".mp3"].join
       File.join format(author.remote_path, bitrate:), filename
     end
 
