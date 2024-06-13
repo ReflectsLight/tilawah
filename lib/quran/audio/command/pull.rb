@@ -12,16 +12,15 @@ module Quran::Audio
     def initialize(...)
       super
       @http = Net::HTTP.new("everyayah.com", 443).tap { _1.use_ssl = true }
-      @surah_length = Ryo.from_json(path: File.join(dir.datadir, "surah_length.json"))
     end
 
     def run
       summary(recitations[recitation])
       surahs.each do |surah|
-        1.upto(surah_length(surah)) do |ayah|
+        1.upto(sizeof[surah]) do |ayah|
           mp3 = MP3.new(recitation:, surah:, ayah:, bitrate:)
           pull(mp3, delay) unless File.exist?(mp3.local_path)
-          percent = sprintf("%.2f", (ayah / surah_length(surah).to_f) * 100)
+          percent = sprintf("%.2f", (ayah / sizeof[surah].to_f) * 100)
           line.rewind.print "Surah #{surah} [#{percent}%]"
         end
         line.end
@@ -63,8 +62,8 @@ module Quran::Audio
         .end.end
     end
 
-    def surah_length(surah)
-      @surah_length[surah.to_s]
+    def sizeof
+      Ryo.from_json(path: File.join(dir.datadir, "sizeof.json"))
     end
 
     def recitations
