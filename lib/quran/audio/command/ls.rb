@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 module Quran::Audio
-  class Command::Ls < Command
-    require "erb"
-    require "io/console"
-    require "paint"
+  require "erb"
+  require "io/console"
+  require "paint"
 
+  class Command::Ls < Command
     set_banner usage: "quran-audio ls [OPTIONS]",
-               description: "List recitation authors."
+               description: "List reciters"
 
     def run
       authors = Ryo.from_json_file(path.authors_file)

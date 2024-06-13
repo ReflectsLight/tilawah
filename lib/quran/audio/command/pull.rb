@@ -3,7 +3,7 @@
 module Quran::Audio
   class Command::Pull < Command
     set_banner usage: "quran-audio pull [OPTIONS]",
-               description: "Download MP3 files from everyayah.com."
+               description: "Pull MP3 files from everyayah.com"
     set_option "-a AUTHOR", "--author AUTHOR", "An author's name"
     set_option "-b BITRATE", "--bitrate BITRATE", "MP3 bitrate"
     set_option "-s NUMBERS", "--surahs NUMBERS", "Comma-separated list of surah IDs", as: Array
