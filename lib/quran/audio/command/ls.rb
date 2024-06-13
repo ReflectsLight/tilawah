@@ -10,8 +10,8 @@ module Quran::Audio
                description: "List reciters"
 
     def run
-      authors = Ryo.from_json(path: path.authors_file)
-      template = File.binread File.join(path.share_dir, "erb", "author.txt.erb")
+      authors = Ryo.from_json(path: path.authors)
+      template = File.binread File.join(path.datadir, "erb", "author.txt.erb")
       render(authors, template)
     end
 

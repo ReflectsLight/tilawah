@@ -6,16 +6,21 @@ can download recitations of The Noble Quran from
 The recitations are provided as MP3 files
 (with one MP3 file per ayah).
 
-## share/
+## ~/.local/share/quran-audio/
 
-* [share/quran-audio/mp3/alafasy/](share/quran-audio/mp3/alafasy/)
-  contains recitations by Mishari bin Rashed Alafasy
-* [share/quran-audio/mp3/alajmi/](share/quran-audio/mp3/alajmi/)
-  contains recitations by Ahmad bin Ali Al-Ajmi
-* [share/quran-audio/mp3/yassin/](share/quran-audio/mp3/yassin/)
-  contains recitations by Sahl Yassin
+By default downloads are stored relative to
+`~/.local/share/quran-audio`.  Otherwise
+`$XDG_DATA_HOME/quran-audio` can be used instead.
 
-An example path: `share/quran-audio/mp3/alafasy/1/1.mp3`.
+* **~/.local/share/quran-audio/mp3/alafasy/** <br>
+  Contains recitations by Mishari bin Rashed Alafasy
+* **~/.local/share/quran-audio/mp3/alajmi/** <br>
+  Contains recitations by Ahmad bin Ali Al-Ajmi
+* **~/.local/share/quran-audio/mp3/yassin/** <br>
+  Contains recitations by Sahl Yassin
+
+An example path:
+`/home/user/.local/share/quran-audio/mp3/alafasy/1/1.mp3`.
 
 ## Usage
 

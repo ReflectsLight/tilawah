@@ -15,7 +15,7 @@ module Quran::Audio
     def initialize(...)
       super
       @http = Net::HTTP.new("everyayah.com", 443).tap { _1.use_ssl = true }
-      @surah_length = Ryo.from_json(path: path.length_file)
+      @surah_length = Ryo.from_json(path: path.length)
     end
 
     def run
