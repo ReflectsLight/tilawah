@@ -22,7 +22,7 @@ module Quran::Audio
     #  Returns the path to an MP3 file on a remote HTTP server
     def remote_path
       filename = [surah.to_s.rjust(3, "0"), ayah.to_s.rjust(3, "0"), ".mp3"].join
-      File.join format(recitation.remote_path, bitrate:), filename
+      File.join format(recitation.path, bitrate:), filename
     end
 
     ##
