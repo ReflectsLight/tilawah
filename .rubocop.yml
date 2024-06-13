@@ -12,8 +12,8 @@ AllCops:
   TargetRubyVersion: 3.2
   Include:
     - lib/*.rb
-    - lib/quran-audio/*.rb
-    - lib/quran-audio/**/*.rb
+    - lib/quran/*.rb
+    - lib/quran/**/*.rb
     - libexec/quran-audio/*
     - bin/*
 
