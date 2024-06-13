@@ -40,7 +40,7 @@ module Quran::Audio
       write(mp3, res, interrupt:)
       sleep(delay)
     rescue Interrupt
-      line.end.rewind.print("Wait for a graceful exit").end
+      line.end.rewind.print("SIGINT: exiting cleanly, please wait").end
       pull(mp3, delay, interrupt: true)
     rescue SocketError, SystemCallError, Net::OpenTimeout => e
       line.end.rewind.print("#{e.class}: retry")

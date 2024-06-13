@@ -1,17 +1,28 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-libexec = File.realpath File.join(__dir__, "..", "libexec", "quran-audio")
-case ARGV[0]
-when "pull"
-  Process.spawn File.join(libexec, "pull"), *ARGV[1..]
+def wait
   Process.wait
-when "ls"
-  Process.spawn File.join(libexec, "ls"), *ARGV[1..]
-  Process.wait
-else
-  warn "Usage: quran-audio [COMMAND] [OPTIONS]\n\n" \
-       "Commands:\n" \
-       "  pull              Pull MP3 files from everyayah.com\n" \
-       "  ls                List reciters\n" \
+rescue Interrupt
+  retry
 end
+
+def main(argv)
+  libexec = File.realpath File.join(__dir__, "..", "libexec", "quran-audio")
+  case argv[0]
+  when "pull"
+    Process.spawn File.join(libexec, "pull"), *ARGV[1..]
+    Process.wait
+  when "ls"
+    Process.spawn File.join(libexec, "ls"), *ARGV[1..]
+    Process.wait
+  else
+    warn "Usage: quran-audio [COMMAND] [OPTIONS]\n\n" \
+         "Commands:\n" \
+         "  pull              Pull MP3 files from everyayah.com\n" \
+         "  ls                List reciters\n" \
+  end
+rescue Interrupt
+  wait
+end
+main(ARGV)
