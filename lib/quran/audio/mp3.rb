@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
 module Quran::Audio
-  class MP3 < Struct.new(:author, :surah, :ayah, :bitrate, keyword_init: true)
-    def initialize(author:, **kw)
-      super(author: authors[author], **kw)
+  class MP3 < Struct.new(:reciter, :surah, :ayah, :bitrate, keyword_init: true)
+    def initialize(reciter:, **kw)
+      super(reciter: reciters[reciter], **kw)
     end
 
     def bitrate
-      super || author.default_bitrate
+      super || reciter.default_bitrate
     end
 
     def remote_path
       filename = [surah.to_s.rjust(3, "0"), ayah.to_s.rjust(3, "0"), ".mp3"].join
-      File.join format(author.remote_path, bitrate:), filename
+      File.join format(reciter.remote_path, bitrate:), filename
     end
 
     def local_path
       File.join(
-        format(author.dest_dir, sharedir:),
+        format(reciter.dest_dir, sharedir:),
         surah.to_s,
         "#{ayah}.mp3"
       )
@@ -25,8 +25,8 @@ module Quran::Audio
 
     private
 
-    def authors
-      @authors ||= Ryo.from_json(path: File.join(datadir, "authors.json"))
+    def reciters
+      @reciters ||= Ryo.from_json(path: File.join(datadir, "reciters.json"))
     end
 
     def sharedir

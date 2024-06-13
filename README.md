@@ -25,6 +25,8 @@ quran-audio is available via rubygems.org:
 
     user@localhost$ gem install quran-audio
     user@localhost$ quran-audio --help
+    user@localhost$ quran-audio ls --help
+    user@localhost$ quran-audio pull --help
 
 ## Thanks
 
