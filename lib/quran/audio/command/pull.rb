@@ -4,7 +4,7 @@ module Quran::Audio
   class Command::Pull < Command
     set_banner usage: "quran-audio pull [OPTIONS]",
                description: "Pull MP3 files from everyayah.com"
-    set_option "-r RECITER", "--reciter RECITER", "A reciter's name"
+    set_option "-r RECITATION", "--recitation RECITATION", "A recitation's name"
     set_option "-b BITRATE", "--bitrate BITRATE", "MP3 bitrate"
     set_option "-s NUMBERS", "--surahs NUMBERS", "Comma-separated list of surah IDs", as: Array
     set_option "-d SECONDS", "--delay", "Delay between requests, in seconds", as: Float
@@ -21,7 +21,7 @@ module Quran::Audio
     def run
       surahs.each do |surah|
         1.upto(surah_length(surah)) do |ayah|
-          mp3 = MP3.new(reciter:, surah:, ayah:, bitrate:)
+          mp3 = MP3.new(recitation:, surah:, ayah:, bitrate:)
           pull(mp3, delay) unless File.exist?(mp3.local_path)
           percent = sprintf("%.2f", (ayah / surah_length(surah).to_f) * 100)
           line.rewind.print "Surah #{surah} [#{percent}%]"
