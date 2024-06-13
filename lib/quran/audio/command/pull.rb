@@ -9,8 +9,6 @@ module Quran::Audio
     set_option "-s NUMBERS", "--surahs NUMBERS", "Comma-separated list of surah IDs", as: Array, default: (1..114)
     set_option "-d SECONDS", "--delay", "Delay between requests, in seconds", as: Float, default: 0.5
 
-    attr_reader :http
-
     def initialize(...)
       super
       @http = Net::HTTP.new("everyayah.com", 443).tap { _1.use_ssl = true }
@@ -18,6 +16,7 @@ module Quran::Audio
     end
 
     def run
+      summary(recitations[recitation])
       surahs.each do |surah|
         1.upto(surah_length(surah)) do |ayah|
           mp3 = MP3.new(recitation:, surah:, ayah:, bitrate:)
@@ -30,6 +29,8 @@ module Quran::Audio
     end
 
     private
+
+    attr_reader :http
 
     def pull(mp3, delay, interrupt: false)
       res = http.get(mp3.remote_path)
@@ -54,8 +55,20 @@ module Quran::Audio
       end
     end
 
+    def summary(r)
+      line
+        .rewind
+        .print("Recitation".ljust(12), r.name).end
+        .print("Directory".ljust(12), format(r.dest_dir, sharedir: dir.sharedir))
+        .end.end
+    end
+
     def surah_length(surah)
       @surah_length[surah.to_s]
+    end
+
+    def recitations
+      Ryo.from_json(path: File.join(dir.datadir, "recitations.json"))
     end
   end
 end
