@@ -20,7 +20,7 @@ By default downloads are stored relative to
   Contains recitations by Sahl Yassin
 
 An example path:
-`/home/user/.local/share/quran-audio/mp3/alafasy/1/1.mp3`.
+`/home/user/.local/share/quran-audio/mp3/alafasy/1/1.mp3`
 
 ## Usage
 
