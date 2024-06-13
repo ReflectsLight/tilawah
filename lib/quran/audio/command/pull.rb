@@ -40,10 +40,10 @@ module Quran::Audio
       write(mp3, res, interrupt:)
       sleep(delay)
     rescue Interrupt
-      line.end.rewind.print("SIGINT: exiting cleanly, please wait").end
+      line.end.print("SIGINT: exiting cleanly, please wait").end
       pull(mp3, delay, interrupt: true)
     rescue SocketError, SystemCallError, Net::OpenTimeout => e
-      line.end.rewind.print("#{e.class}: retry")
+      line.end.print("#{e.class}: retry")
       interrupt ? abort! : pull(mp3, delay)
     end
 
@@ -61,7 +61,6 @@ module Quran::Audio
 
     def summary(r)
       line
-        .rewind
         .print("Recitation".ljust(12), r.name).end
         .print("Directory".ljust(12), format(r.destdir, sharedir: dir.sharedir))
         .end.end
