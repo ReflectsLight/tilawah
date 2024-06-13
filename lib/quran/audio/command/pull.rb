@@ -58,7 +58,7 @@ module Quran::Audio
       line
         .rewind
         .print("Recitation".ljust(12), r.name).end
-        .print("Directory".ljust(12), format(r.dest_dir, sharedir: dir.sharedir))
+        .print("Directory".ljust(12), format(r.destdir, sharedir: dir.sharedir))
         .end.end
     end
 

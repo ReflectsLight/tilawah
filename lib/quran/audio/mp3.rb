@@ -30,7 +30,7 @@ module Quran::Audio
     #  Returns the path to an MP3 file on disk
     def local_path
       File.join(
-        format(recitation.dest_dir, sharedir:),
+        format(recitation.destdir, sharedir:),
         surah.to_s,
         "#{ayah}.mp3"
       )
