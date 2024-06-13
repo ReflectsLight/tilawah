@@ -8,7 +8,7 @@ The recitations are provided as MP3 files
 
 ## ~/.local/share/quran-audio/
 
-Downloads are stored relative to `~/.local/share/quran-audio`. <br>
+Downloads are stored relative to _~/.local/share/quran-audio_. <br>
 An example path:
 `/home/user/.local/share/quran-audio/mp3/alafasy/1/1.mp3`
 
