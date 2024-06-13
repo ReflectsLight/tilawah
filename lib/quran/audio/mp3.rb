@@ -2,9 +2,6 @@
 
 module Quran::Audio
   class MP3 < Struct.new(:author, :surah, :ayah, :bitrate, keyword_init: true)
-    require_relative "command/mixin/path"
-    include Command::Mixin::Path
-
     def initialize(author:, **kw)
       super(author: authors[author], **kw)
     end
@@ -20,7 +17,7 @@ module Quran::Audio
 
     def local_path
       File.join(
-        format(author.dest_dir, share_dir: path.share_dir),
+        format(author.dest_dir, share_dir:),
         surah.to_s,
         "#{ayah}.mp3"
       )
@@ -29,7 +26,18 @@ module Quran::Audio
     private
 
     def authors
-      @authors ||= Ryo.from_json_file(path.authors_file)
+      @authors ||= Ryo.from_json_file(authors_file)
+    end
+
+    def share_dir
+      @share_dir ||= File.realpath File.join(
+        __dir__, "..", "..", "..",
+        "share", "quran-audio"
+      )
+    end
+
+    def authors_file
+      File.join share_dir, "data", "authors.json"
     end
   end
 end
