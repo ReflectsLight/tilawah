@@ -1,13 +1,6 @@
 # frozen_string_literal: true
 
 module Quran::Audio
-  require "cmd"
-  require "ryo"
-  require "ryo/json"
-  require "fileutils"
-  require "io/line"
-  require "net/http"
-
   class Command < Cmd
     require_relative "command/ls"
     require_relative "command/pull"
