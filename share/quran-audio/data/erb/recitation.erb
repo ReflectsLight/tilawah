@@ -1,0 +1,4 @@
+<%= Paint[recitation.name, :bold] %>
+From       <%= recitation.origin %>
+Bitrates   <%= recitation.available_bitrates.join(", ") %> (default = <%= recitation.default_bitrate %>)
+CLI        --recitation <%= switch %>

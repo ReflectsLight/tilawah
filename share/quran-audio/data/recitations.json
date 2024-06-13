@@ -1,7 +1,7 @@
 {
   "alafasy": {
     "name": "Mishari bin Rashed Alafasy",
-    "nationality": "Kuwait",
+    "origin": "Kuwait",
     "available_bitrates": [128, 64],
     "default_bitrate": 128,
     "remote_path": "/data/Alafasy_%{bitrate}kbps/",
@@ -9,7 +9,7 @@
   },
   "alajmi": {
     "name": "Ahmad bin Ali Al-Ajmi",
-    "nationality": "Saudi Arabia",
+    "origin": "Saudi Arabia",
     "available_bitrates": [128],
     "default_bitrate": 128,
     "remote_path": "/data/ahmed_ibn_ali_al_ajamy_%{bitrate}kbps/",
@@ -17,7 +17,7 @@
   },
   "yassin": {
     "name": "Sahl Yassin",
-    "nationality": "Saudi Arabia",
+    "origin": "Saudi Arabia",
     "available_bitrates": [128],
     "default_bitrate": 128,
     "remote_path": "/data/Sahl_Yassin_%{bitrate}kbps/",

@@ -3,19 +3,19 @@
 module Quran::Audio
   class Command::Ls < Command
     set_banner usage: "quran-audio ls [OPTIONS]",
-               description: "List reciters"
+               description: "List recitations"
 
     def run
-      reciters = Ryo.from_json(path: File.join(dir.datadir, "reciters.json"))
-      template = File.binread(File.join(dir.datadir, "erb", "reciter.erb"))
-      render(reciters, template)
+      recitations = Ryo.from_json(path: File.join(dir.datadir, "recitations.json"))
+      template = File.binread(File.join(dir.datadir, "erb", "recitation.erb"))
+      render(recitations, template)
     end
 
     private
 
-    def render(reciters, template)
-      puts Ryo.each(reciters).map { |switch, reciter|
-        ERB.new(template).result_with_hash({switch:, reciter: Ryo(reciter)})
+    def render(recitations, template)
+      puts Ryo.each(recitations).map { |switch, recitation|
+        ERB.new(template).result_with_hash({switch:, recitation: Ryo(recitation)})
       }.join("\n")
     end
   end

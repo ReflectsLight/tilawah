@@ -5,16 +5,16 @@ module Quran::Audio
   # {Quran::Audio::MP3 Quran::Audio::MP3} provides
   # an abstract interface around an MP3 file, and
   # within the context of the quran-audio project.
-  class MP3 < Struct.new(:reciter, :surah, :ayah, :bitrate, keyword_init: true)
-    def initialize(reciter:, **kw)
-      super(reciter: reciters[reciter], **kw)
+  class MP3 < Struct.new(:recitation, :surah, :ayah, :bitrate, keyword_init: true)
+    def initialize(recitation:, **kw)
+      super(recitation: recitations[recitation], **kw)
     end
 
     ##
     # @return [String]
     #  Returns the bitrate of an MP3 file
     def bitrate
-      super || reciter.default_bitrate
+      super || recitation.default_bitrate
     end
 
     ##
@@ -22,7 +22,7 @@ module Quran::Audio
     #  Returns the path to an MP3 file on a remote HTTP server
     def remote_path
       filename = [surah.to_s.rjust(3, "0"), ayah.to_s.rjust(3, "0"), ".mp3"].join
-      File.join format(reciter.remote_path, bitrate:), filename
+      File.join format(recitation.remote_path, bitrate:), filename
     end
 
     ##
@@ -30,7 +30,7 @@ module Quran::Audio
     #  Returns the path to an MP3 file on disk
     def local_path
       File.join(
-        format(reciter.dest_dir, sharedir:),
+        format(recitation.dest_dir, sharedir:),
         surah.to_s,
         "#{ayah}.mp3"
       )
@@ -38,8 +38,8 @@ module Quran::Audio
 
     private
 
-    def reciters
-      @reciters ||= Ryo.from_json(path: File.join(datadir, "reciters.json"))
+    def recitations
+      @recitations ||= Ryo.from_json(path: File.join(datadir, "recitations.json"))
     end
 
     def sharedir
