@@ -40,7 +40,7 @@ module Quran::Audio
       pull(mp3, delay, interrupt: true)
     rescue SocketError, SystemCallError, Net::OpenTimeout => e
       line.end.rewind.print("#{e.class}: retry")
-      interrupt ? throw(:interrupt, true) : pull(mp3, delay)
+      interrupt ? abort! : pull(mp3, delay)
     end
 
     def write(mp3, res, interrupt:)
@@ -48,9 +48,10 @@ module Quran::Audio
       when Net::HTTPOK
         mkdir_p File.dirname(mp3.local_path)
         File.binwrite(mp3.local_path, res.body)
-        throw(:interrupt, true) if interrupt
+        abort! if interrupt
       else
-        puts "error #{res.body}"
+        line.end.print("error: unexpected response (#{res.class})")
+        abort!
       end
     end
 
@@ -68,6 +69,10 @@ module Quran::Audio
 
     def recitations
       @recitations ||= Ryo.from_json(path: File.join(dir.datadir, "recitations.json"))
+    end
+
+    def abort!
+      throw(:abort, 1)
     end
   end
 end
