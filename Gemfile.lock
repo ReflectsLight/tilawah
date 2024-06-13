@@ -1,17 +1,8 @@
-GIT
-  remote: https://github.com/0x1eef/io-line.rb.git
-  revision: 04754c6f2ed255bee1fbfdf93e88722b9a784eb5
-  tag: v0.1.0
-  specs:
-    io-line.rb (0.1.0)
-      io-console (~> 0.5)
-
 PATH
   remote: .
   specs:
     quran-audio (0.2.0)
       cmd.rb (~> 0.5)
-      io-console (= 0.5.11)
       io-line.rb (~> 0.1)
       json (= 2.6.1)
       paint (~> 2.3)
@@ -26,6 +17,8 @@ GEM
       cli-option_parser.rb (~> 0.6)
       ryo.rb (~> 0.4)
     io-console (0.5.11)
+    io-line.rb (0.1.0)
+      io-console (~> 0.5)
     json (2.6.1)
     language_server-protocol (3.17.0.3)
     paint (2.3.0)
@@ -63,7 +56,6 @@ PLATFORMS
   x86_64-openbsd
 
 DEPENDENCIES
-  io-line.rb!
   quran-audio!
   standard (~> 1.25)
 
