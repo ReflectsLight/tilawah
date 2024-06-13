@@ -8,9 +8,7 @@ The recitations are provided as MP3 files
 
 ## ~/.local/share/quran-audio/
 
-By default downloads are stored relative to
-`~/.local/share/quran-audio`.  <br> Otherwise
-`$XDG_DATA_HOME/quran-audio` can be used instead.
+Downloads are stored relative to `~/.local/share/quran-audio`:
 
 * **~/.local/share/quran-audio/mp3/alafasy/** <br>
   Contains recitations by Mishari bin Rashed Alafasy
