@@ -26,8 +26,8 @@ An example path:
     cd quran-audio
 
     # Install
-    bundle install
-    bundle exec ruby bin/quran-audio --help
+    gem install quran-audio
+    quran-audio --help
 
 ## Thanks
 
