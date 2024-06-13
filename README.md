@@ -19,15 +19,12 @@ An example path:
 * **~/.local/share/quran-audio/mp3/yassin/** <br>
   Contains recitations by Sahl Yassin
 
-## Usage
+## Install
 
-    # Clone
-    git clone https://github.com/ReflectsLight/quran-audio
-    cd quran-audio
+quran-audio is available via rubygems.org:
 
-    # Install
-    gem install quran-audio
-    quran-audio --help
+    user@localhost$ gem install quran-audio
+    user@localhost$ quran-audio --help
 
 ## Thanks
 
