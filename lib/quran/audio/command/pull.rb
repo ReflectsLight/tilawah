@@ -4,11 +4,10 @@ module Quran::Audio
   class Command::Pull < Command
     set_banner usage: "quran-audio pull [OPTIONS]",
                description: "Pull MP3 files from everyayah.com"
-    set_option "-r RECITATION", "--recitation RECITATION", "A recitation's name"
+    set_option "-r RECITATION", "--recitation RECITATION", "A recitation's name", default: "alafasy"
     set_option "-b BITRATE", "--bitrate BITRATE", "MP3 bitrate"
-    set_option "-s NUMBERS", "--surahs NUMBERS", "Comma-separated list of surah IDs", as: Array
-    set_option "-d SECONDS", "--delay", "Delay between requests, in seconds", as: Float
-    set_default author: "alafasy", surahs: (1..114).to_a, delay: 0.5
+    set_option "-s NUMBERS", "--surahs NUMBERS", "Comma-separated list of surah IDs", as: Array, default: (1..114)
+    set_option "-d SECONDS", "--delay", "Delay between requests, in seconds", as: Float, default: 0.5
 
     attr_reader :http
 
