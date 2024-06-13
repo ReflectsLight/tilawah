@@ -31,8 +31,8 @@ module Quran::Audio
 
     def sharedir
       @sharedir ||= begin
-        root = ENV["XDG_DATA_HOME"] || File.join(Dir.home, ".local", "share")
-        File.join(root, "quran-audio")
+        localbase = ENV["XDG_DATA_HOME"] || File.join(Dir.home, ".local")
+        File.join(localbase, "share", "quran-audio")
       end
     end
 

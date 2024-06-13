@@ -25,9 +25,9 @@ module Quran::Audio
 
     def dir
       @dir ||= Ryo.from({
-        localbase: ENV["XDG_DATA_HOME"] || File.join(Dir.home, ".local", "share"),
+        localbase: ENV["XDG_DATA_HOME"] || File.join(Dir.home, ".local"),
         rootdir: File.realpath(File.join(__dir__, "..", "..", "..")),
-        sharedir: Ryo.memo { File.join(localbase, "quran-audio") },
+        sharedir: Ryo.memo { File.join(localbase, "share", "quran-audio") },
         datadir: Ryo.memo { File.join(rootdir, "share", "quran-audio", "data") }
       })
     end
