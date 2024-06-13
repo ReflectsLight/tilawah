@@ -26,7 +26,7 @@ module Quran::Audio
     private
 
     def authors
-      @authors ||= Ryo.from_json(path: authors_file)
+      @authors ||= Ryo.from_json(path: File.join(share_dir, "data", "authors.json"))
     end
 
     def share_dir
@@ -34,10 +34,6 @@ module Quran::Audio
         __dir__, "..", "..", "..",
         "share", "quran-audio"
       )
-    end
-
-    def authors_file
-      File.join share_dir, "data", "authors.json"
     end
   end
 end
