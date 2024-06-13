@@ -8,7 +8,9 @@ The recitations are provided as MP3 files
 
 ## ~/.local/share/quran-audio/
 
-Downloads are stored relative to `~/.local/share/quran-audio`:
+Downloads are stored relative to `~/.local/share/quran-audio`. <br>
+An example path:
+`/home/user/.local/share/quran-audio/mp3/alafasy/1/1.mp3`
 
 * **~/.local/share/quran-audio/mp3/alafasy/** <br>
   Contains recitations by Mishari bin Rashed Alafasy
@@ -16,9 +18,6 @@ Downloads are stored relative to `~/.local/share/quran-audio`:
   Contains recitations by Ahmad bin Ali Al-Ajmi
 * **~/.local/share/quran-audio/mp3/yassin/** <br>
   Contains recitations by Sahl Yassin
-
-An example path:
-`/home/user/.local/share/quran-audio/mp3/alafasy/1/1.mp3`
 
 ## Usage
 
