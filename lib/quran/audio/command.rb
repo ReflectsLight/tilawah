@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module Quran::Audio
+  ##
+  # The {Quran::Audio::Command Quran::Audio::Command} class
+  # is the superclass of all commands.
   class Command < Cmd
     require_relative "command/ls"
     require_relative "command/pull"
