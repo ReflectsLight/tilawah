@@ -16,6 +16,14 @@ module Quran::Audio
 
     def run
       summary(recitations[recitation])
+      start(surahs)
+    end
+
+    private
+
+    attr_reader :http
+
+    def start(surahs)
       surahs.each do |surah|
         1.upto(sizeof[surah]) do |ayah|
           mp3 = MP3.new(recitation:, surah:, ayah:, bitrate:)
@@ -26,10 +34,6 @@ module Quran::Audio
         line.end
       end
     end
-
-    private
-
-    attr_reader :http
 
     def pull(mp3, delay, interrupt: false)
       res = http.get(mp3.remote_path)
