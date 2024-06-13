@@ -21,6 +21,10 @@ module Quran::Audio
       Ryo.property?(options, m) || super
     end
 
+    def respond_to?(m, p = false)
+      Ryo.property?(options, m) || super
+    end
+
     private
 
     def path
