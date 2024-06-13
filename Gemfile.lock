@@ -51,7 +51,7 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
-    ryo.rb (0.5.2)
+    ryo.rb (0.5.3)
     standard (1.25.3)
       language_server-protocol (~> 3.17.0.2)
       rubocop (~> 1.48.1)
