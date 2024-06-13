@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors = ["0x1eef"]
   gem.email = ["0x1eef@protonmail.com"]
   gem.homepage = "https://github.com/ReflectsLight/quran-audio#readme"
-  gem.version = File.binread("./VERSION")[/[\d.]+/]
+  gem.version = File.binread("./share/quran-audio/VERSION")[/[\d.]+/]
   gem.licenses = ["BSD0L"]
   gem.files = Dir[
     "README.md",
