@@ -23,13 +23,11 @@ module Quran::Audio
 
     private
 
-    def path
-      @path ||= Ryo.from({
-        rootdir: Ryo.memo { ENV["XDG_DATA_HOME"] || File.join(Dir.home, ".local", "share") },
+    def dir
+      @dir ||= Ryo.from({
+        rootdir: ENV["XDG_DATA_HOME"] || File.join(Dir.home, ".local", "share"),
         sharedir: Ryo.memo { File.join(rootdir, "quran-audio") },
-        datadir: Ryo.memo { File.realpath File.join(__dir__, "..", "..", "..", "share", "quran-audio", "data") },
-        authors: Ryo.memo { File.join(datadir, "authors.json") },
-        length: Ryo.memo { File.join(datadir, "surah_length.json") }
+        datadir: File.realpath(File.join(__dir__, "..", "..", "..", "share", "quran-audio", "data"))
       })
     end
 

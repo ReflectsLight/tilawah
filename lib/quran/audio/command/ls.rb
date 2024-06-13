@@ -1,17 +1,13 @@
 # frozen_string_literal: true
 
 module Quran::Audio
-  require "erb"
-  require "io/console"
-  require "paint"
-
   class Command::Ls < Command
     set_banner usage: "quran-audio ls [OPTIONS]",
                description: "List reciters"
 
     def run
-      authors = Ryo.from_json(path: path.authors)
-      template = File.binread File.join(path.datadir, "erb", "author.txt.erb")
+      authors  = Ryo.from_json(path: File.join(dir.datadir, "authors.json"))
+      template = File.binread(File.join(dir.datadir, "erb", "author.txt.erb"))
       render(authors, template)
     end
 
