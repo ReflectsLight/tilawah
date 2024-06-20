@@ -6,7 +6,7 @@ can download recitations of The Noble Quran from
 The recitations are provided as MP3 files
 (with one MP3 file per ayah).
 
-## ~/.local/share/quran-audio/
+## Configuration
 
 Downloads are stored relative to ~/.local/share/quran-audio. <br>
 An example path:
