@@ -22,5 +22,13 @@
     "default_bitrate": 128,
     "path": "/data/Sahl_Yassin_%{bitrate}kbps/",
     "destdir": "%{sharedir}/mp3/yassin/"
+  },
+  "rifai": {
+    "name": "Nabil Al-Rifai",
+    "origin": "Saudi Arabia",
+    "available_bitrates": [48],
+    "default_bitrate": 48,
+    "path": "/data/Nabil_Rifa3i_%{bitrate}kbps/",
+    "destdir": "%{sharedir}/mp3/rifai/"
   }
 }
