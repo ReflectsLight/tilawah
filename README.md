@@ -32,7 +32,8 @@ quran-audio is available via rubygems.org:
 
 ## Thanks
 
-Alhamdulillah
+الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+
 
 * Thanks to the [everyayah.com](https://everyayah.com) website
 * Thanks to the reciters
