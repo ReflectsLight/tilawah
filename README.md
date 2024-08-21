@@ -20,7 +20,7 @@ An example path:
   Contains recitations by Sahl Yassin
 * **~/.local/share/quran-audio/mp3/rifai/** <br>
   Contains recitations by Nabil Al-Rifai
-*
+
 ## Install
 
 quran-audio is available via rubygems.org:
