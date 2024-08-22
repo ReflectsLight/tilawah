@@ -1,5 +1,6 @@
 {
   "alafasy": {
+    "id": "alafasy",
     "name": "Mishari bin Rashed Alafasy",
     "origin": "Kuwait",
     "available_bitrates": [128, 64],
@@ -8,6 +9,7 @@
     "destdir": "%{sharedir}/mp3/alafasy/"
   },
   "alajmi": {
+    "id": "alajmi",
     "name": "Ahmad bin Ali Al-Ajmi",
     "origin": "Saudi Arabia",
     "available_bitrates": [128],
@@ -16,6 +18,7 @@
     "destdir": "%{sharedir}/mp3/alajmi/"
   },
   "yassin": {
+    "id": "yassin",
     "name": "Sahl Yassin",
     "origin": "Saudi Arabia",
     "available_bitrates": [128],
@@ -24,11 +27,12 @@
     "destdir": "%{sharedir}/mp3/yassin/"
   },
   "rifai": {
-    "name": "Nabil Al-Rifai",
+    "id": "rifai",
+    "name": "Hani Ar-Rifai",
     "origin": "Saudi Arabia",
-    "available_bitrates": [48],
-    "default_bitrate": 48,
-    "path": "/data/Nabil_Rifa3i_%{bitrate}kbps/",
+    "available_bitrates": [192, 64],
+    "default_bitrate": 192,
+    "path": "/data/Hani_Rifai_%{bitrate}kbps/",
     "destdir": "%{sharedir}/mp3/rifai/"
   }
 }

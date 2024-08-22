@@ -19,7 +19,7 @@ An example path:
 * **~/.local/share/quran-audio/mp3/yassin/** <br>
   Contains recitations by Sahl Yassin
 * **~/.local/share/quran-audio/mp3/rifai/** <br>
-  Contains recitations by Nabil Al-Rifai
+  Contains recitations by Hani ar-Rifai
 
 ## Install
 
