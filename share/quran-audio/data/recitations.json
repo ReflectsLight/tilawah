@@ -28,7 +28,7 @@
   },
   "rifai": {
     "id": "rifai",
-    "name": "Hani Ar-Rifai",
+    "name": "Hani ar-Rifai",
     "origin": "Saudi Arabia",
     "available_bitrates": [192, 64],
     "default_bitrate": 192,
