@@ -9,11 +9,6 @@ module Quran::Audio
     set_option "-s NUMBERS", "--surahs NUMBERS", "Comma-separated list of surah IDs", as: Array, default: (1..114)
     set_option "-d SECONDS", "--delay", "Delay between requests, in seconds", as: Float, default: 0.5
 
-    def initialize(...)
-      super
-      @http = Net::HTTP.new("everyayah.com", 443).tap { _1.use_ssl = true }
-    end
-
     def run
       summary(recitations[recitation])
       start(surahs)
@@ -36,6 +31,7 @@ module Quran::Audio
     end
 
     def pull(mp3, delay, interrupt: false)
+      http = Net::HTTP.new(mp3.host, 443).tap { _1.use_ssl = true }
       res = http.get(mp3.remote_path)
       write(mp3, res, interrupt:)
       sleep(delay)
@@ -62,6 +58,7 @@ module Quran::Audio
     def summary(r)
       line
         .print("Recitation".ljust(12), r.name).end
+        .print("Host".ljust(12), r.host).end
         .print("Directory".ljust(12), format(r.destdir, sharedir: dir.sharedir))
         .end.end
     end

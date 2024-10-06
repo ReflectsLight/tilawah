@@ -3,9 +3,10 @@
     "id": "alafasy",
     "name": "Mishari bin Rashed Alafasy",
     "origin": "Kuwait",
-    "available_bitrates": [128, 64],
+    "available_bitrates": [128],
     "default_bitrate": 128,
-    "path": "/data/Alafasy_%{bitrate}kbps/",
+    "host": "audio.al-quran.reflectslight.io",
+    "path": "/alafasy/",
     "destdir": "%{sharedir}/mp3/alafasy/"
   },
   "alajmi": {
@@ -14,7 +15,8 @@
     "origin": "Saudi Arabia",
     "available_bitrates": [128],
     "default_bitrate": 128,
-    "path": "/data/ahmed_ibn_ali_al_ajamy_%{bitrate}kbps/",
+    "host": "audio.al-quran.reflectslight.io",
+    "path": "/alajmi/",
     "destdir": "%{sharedir}/mp3/alajmi/"
   },
   "yassin": {
@@ -23,16 +25,18 @@
     "origin": "Saudi Arabia",
     "available_bitrates": [128],
     "default_bitrate": 128,
-    "path": "/data/Sahl_Yassin_%{bitrate}kbps/",
+    "host": "audio.al-quran.reflectslight.io",
+    "path": "/yassin/",
     "destdir": "%{sharedir}/mp3/yassin/"
   },
   "rifai": {
     "id": "rifai",
     "name": "Hani ar-Rifai",
     "origin": "Saudi Arabia",
-    "available_bitrates": [192, 64],
+    "available_bitrates": [192],
     "default_bitrate": 192,
-    "path": "/data/Hani_Rifai_%{bitrate}kbps/",
+    "host": "audio.al-quran.reflectslight.io",
+    "path": "/rifai/",
     "destdir": "%{sharedir}/mp3/rifai/"
   }
 }

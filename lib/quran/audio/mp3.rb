@@ -19,9 +19,21 @@ module Quran::Audio
 
     ##
     # @return [String]
+    #  Returns the host of a remote HTTP server
+    def host
+      recitation.host
+    end
+
+    ##
+    # @return [String]
     #  Returns the path to an MP3 file on a remote HTTP server
     def remote_path
-      filename = [surah.to_s.rjust(3, "0"), ayah.to_s.rjust(3, "0"), ".mp3"].join
+      case host
+      when "everyayah.com"
+        filename = [surah.to_s.rjust(3, "0"), ayah.to_s.rjust(3, "0"), ".mp3"].join
+      else
+        filename = [surah, "/", ayah, ".mp3"].join
+      end
       File.join format(recitation.path, bitrate:), filename
     end
 
