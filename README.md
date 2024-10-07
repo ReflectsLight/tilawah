@@ -22,14 +22,22 @@ An example path:
 * **~/.local/share/quran-audio/mp3/rifai/** <br>
   Contains recitations by Hani ar-Rifai
 
+## Examples
+
+    # Download 'alafasy' recitation
+    user@localhost$ quran-audio pull -r alafasy
+
+    # Download 'rifai' recitation
+    user@localhost$ quran-audio pull -r rifai
+
+    # List recitations
+    user@localhost$ quran-audio ls
+
 ## Install
 
 quran-audio is available via rubygems.org:
 
     user@localhost$ gem install quran-audio
-    user@localhost$ quran-audio --help
-    user@localhost$ quran-audio ls --help
-    user@localhost$ quran-audio pull --help
 
 ## Thanks
 
