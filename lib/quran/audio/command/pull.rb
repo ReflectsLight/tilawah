@@ -64,11 +64,11 @@ module Quran::Audio
     end
 
     def sizeof
-      @sizeof ||= Ryo.from_json(path: File.join(dir.datadir, "sizeof.json"))
+      @sizeof ||= Ryo.from_json(path: File.join(dir.jsondir, "sizeof.json"))
     end
 
     def recitations
-      @recitations ||= Ryo.from_json(path: File.join(dir.datadir, "recitations.json"))
+      @recitations ||= Ryo.from_json(path: File.join(dir.jsondir, "recitations.json"))
     end
 
     def abort!

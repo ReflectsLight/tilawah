@@ -51,7 +51,7 @@ module Quran::Audio
     private
 
     def recitations
-      @recitations ||= Ryo.from_json(path: File.join(datadir, "recitations.json"))
+      @recitations ||= Ryo.from_json(path: File.join(jsondir, "recitations.json"))
     end
 
     def sharedir
@@ -61,10 +61,10 @@ module Quran::Audio
       end
     end
 
-    def datadir
-      @datadir ||= File.realpath File.join(
+    def jsondir
+      @jsondir ||= File.realpath File.join(
         __dir__, "..", "..", "..",
-        "share", "quran-audio", "data"
+        "share", "quran-audio", "json"
       )
     end
   end

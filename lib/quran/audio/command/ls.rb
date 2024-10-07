@@ -6,8 +6,8 @@ module Quran::Audio
                description: "List recitations"
 
     def run
-      recitations = Ryo.from_json(path: File.join(dir.datadir, "recitations.json"))
-      template = File.binread(File.join(dir.datadir, "erb", "recitation.erb"))
+      recitations = Ryo.from_json(path: File.join(dir.jsondir, "recitations.json"))
+      template = File.binread(File.join(dir.erbdir, "recitation.erb"))
       render(recitations, template)
     end
 
