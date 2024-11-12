@@ -1,3 +1,7 @@
+<p align="center">
+الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِي
+</p>
+
 ## About
 
 quran-audio is a command-line utility that
@@ -8,6 +12,12 @@ one MP3 file per ayah and a *minimum* bitrate of
 128kbps.
 
 ## share/
+
+The command-line utility attempts to download MP3 files
+relative to the `~/.local/share/quran-audio/` directory.
+A single, full recitation of The Noble Quran typically
+ranges from 2.5GB to 2.8GB in size.	Each recitation is
+organized per this directory structure:
 
 * **~/.local/share/quran-audio/mp3/alafasy/** <br>
   Contains recitations by Mishari bin Rashed Alafasy
@@ -20,31 +30,43 @@ one MP3 file per ayah and a *minimum* bitrate of
 
 ## Examples
 
-    # Download 'alafasy' recitation
-    user@localhost$ quran-audio pull -r alafasy
+The following examples demonstrate how to use the quran-audio
+command-line utility to download particular recitations, and
+list available recitations as well:
 
-    # Download 'rifai' recitation
-    user@localhost$ quran-audio pull -r rifai
+	# Download recitations
+	user@localhost$ quran-audio pull -r alafasy
+	user@localhost$ quran-audio pull -r rifai
 
-    # List recitations
-    user@localhost$ quran-audio ls
+    # List available recitations
+	user@localhost$ quran-audio ls
 
 ## Install
 
-quran-audio is available via rubygems.org:
+quran-audio is available via rubygems.org
 
-    user@localhost$ gem install quran-audio
+    gem install quran-audio
 
-## Thanks
+## Credit
 
-الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+**Recitations**
 
+* Mishari bin Rashed Alafasy
+* Ahmad bin Ali Al-Ajmi
+* Sahl Yassin
+* Hani ar-Rifai
 
-* Thanks to the [everyayah.com](https://everyayah.com) website
-* Thanks to the reciters
+**Sources**
+
+* The [everyayah.com](https://everyayah.com) website
+
+## See also
+
+* [al-quran.reflectslight.io](https://al-quran.reflectslight.io)
+* [al-quran-audio.reflectslight.io](https://al-quran-audio.reflectslight.io)
 
 ## License
 
 The "source code" is released under the [GPL](./LICENSE) license
 <br>
-The reciters hold the copyright for the audio files
+Copyright for the recitations belongs to the reciters
