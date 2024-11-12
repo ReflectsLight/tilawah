@@ -2,23 +2,17 @@ PATH
   remote: .
   specs:
     quran-audio (0.3.3)
-      cmd.rb (~> 0.5)
-      io-line.rb (~> 0.1)
       json (~> 2.6)
       paint (~> 2.3)
-      ryo.rb (~> 0.5)
 
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    cli-option_parser.rb (0.6.0)
-    cmd.rb (0.5.1)
-      cli-option_parser.rb (~> 0.6)
-      ryo.rb (~> 0.5)
     io-console (0.7.2)
-    io-line.rb (0.1.0)
-      io-console (~> 0.5)
+    irb (1.14.1)
+      rdoc (>= 4.0.0)
+      reline (>= 0.4.2)
     json (2.6.1)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
@@ -27,9 +21,15 @@ GEM
     parser (3.3.3.0)
       ast (~> 2.4.1)
       racc
+    psych (5.2.0)
+      stringio
     racc (1.8.0)
     rainbow (3.1.1)
+    rdoc (6.7.0)
+      psych (>= 4.0.0)
     regexp_parser (2.9.2)
+    reline (0.5.11)
+      io-console (~> 0.5)
     rexml (3.3.0)
       strscan
     rubocop (1.64.1)
@@ -49,7 +49,6 @@ GEM
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
-    ryo.rb (0.5.3)
     standard (1.37.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -62,6 +61,7 @@ GEM
     standard-performance (1.4.0)
       lint_roller (~> 1.1)
       rubocop-performance (~> 1.21.0)
+    stringio (3.1.2)
     strscan (3.1.0)
     unicode-display_width (2.5.0)
 
@@ -71,6 +71,7 @@ PLATFORMS
   x86_64-openbsd
 
 DEPENDENCIES
+  irb (~> 1.14)
   quran-audio!
   standard (~> 1.25)
 

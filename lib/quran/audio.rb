@@ -2,6 +2,13 @@
 
 module Quran
   module Audio
+    def self.setup_bundle!
+      bundle = File.realpath File.join(__dir__, "..", "..", "bundle")
+      Dir[File.join(bundle, "*")].each { $:.unshift File.join(_1, "lib") }
+    end
+    setup_bundle!
+
+    require "json"
     require "cmd"
     require "ryo"
     require "ryo/json"

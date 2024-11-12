@@ -13,16 +13,16 @@ Gem::Specification.new do |gem|
     "libexec/**/*",
     "lib/**/*.rb",
     "share/**/*",
-    "bin/*"
+    "bin/*",
+    "vendor/*/lib/*.rb",
+    "vendor/*/lib/**/*.rb",
   ]
   gem.executables = ["quran-audio"]
   gem.require_paths = ["lib"]
   gem.summary = "Downloads recitations of The Noble Quran from everyayah.com"
   gem.description = gem.summary
-  gem.add_runtime_dependency "ryo.rb", "~> 0.5"
-  gem.add_runtime_dependency "cmd.rb", "~> 0.5"
   gem.add_runtime_dependency "paint", "~> 2.3"
   gem.add_runtime_dependency "json", "~> 2.6"
-  gem.add_runtime_dependency "io-line.rb", "~> 0.1"
   gem.add_development_dependency "standard", "~> 1.25"
+  gem.add_development_dependency "irb", "~> 1.14"
 end
