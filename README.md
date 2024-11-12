@@ -2,16 +2,12 @@
 
 quran-audio is a command-line utility that
 can download recitations of The Noble Quran from
-[audio.al-quran.reflectslight.io](https://audio.al-quran.reflectslight.io),
-and [everyayah.com](https://everyayah.com).
-The recitations are provided as MP3 files
-(with one MP3 file per ayah).
+[al-quran-audio.reflectslight.io](https://al-quran-audio.reflectslight.io).
+The recitations are provided in the MP3 format with
+one MP3 file per ayah and a *minimum* bitrate of
+128kbps.
 
 ## share/
-
-Downloads are stored relative to ~/.local/share/quran-audio. <br>
-An example path:
-`/home/user/.local/share/quran-audio/mp3/alafasy/1/1.mp3`
 
 * **~/.local/share/quran-audio/mp3/alafasy/** <br>
   Contains recitations by Mishari bin Rashed Alafasy

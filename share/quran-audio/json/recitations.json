@@ -5,7 +5,7 @@
     "origin": "Kuwait",
     "available_bitrates": [128],
     "default_bitrate": 128,
-    "host": "audio.al-quran.reflectslight.io",
+    "host": "al-quran-audio.reflectslight.io",
     "path": "/alafasy/",
     "destdir": "%{sharedir}/mp3/alafasy/"
   },
@@ -15,7 +15,7 @@
     "origin": "Saudi Arabia",
     "available_bitrates": [128],
     "default_bitrate": 128,
-    "host": "audio.al-quran.reflectslight.io",
+    "host": "al-quran-audio.reflectslight.io",
     "path": "/alajmi/",
     "destdir": "%{sharedir}/mp3/alajmi/"
   },
@@ -25,7 +25,7 @@
     "origin": "Saudi Arabia",
     "available_bitrates": [128],
     "default_bitrate": 128,
-    "host": "audio.al-quran.reflectslight.io",
+    "host": "al-quran-audio.reflectslight.io",
     "path": "/yassin/",
     "destdir": "%{sharedir}/mp3/yassin/"
   },
@@ -35,7 +35,7 @@
     "origin": "Saudi Arabia",
     "available_bitrates": [192],
     "default_bitrate": 192,
-    "host": "audio.al-quran.reflectslight.io",
+    "host": "al-quran-audio.reflectslight.io",
     "path": "/rifai/",
     "destdir": "%{sharedir}/mp3/rifai/"
   }
