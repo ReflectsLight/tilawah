@@ -19,8 +19,8 @@ def main(argv)
   else
     warn "Usage: quran-audio [COMMAND] [OPTIONS]\n\n" \
          "Commands:\n" \
-         "  pull              Pull MP3 files from everyayah.com\n" \
-         "  ls                List reciters\n" \
+         "  pull              Download recitations\n" \
+         "  ls                List available recitations\n"
   end
 rescue Interrupt
   wait

@@ -2,9 +2,8 @@
 
 module Quran::Audio
   ##
-  # {Quran::Audio::MP3 Quran::Audio::MP3} provides
-  # an abstract interface around an MP3 file, and
-  # within the context of the quran-audio project.
+  # {Quran::Audio::MP3 Quran::Audio::MP3} represents
+  # an ayah of The Noble Quran in the MP3 format.
   class MP3 < Struct.new(:recitation, :surah, :ayah, :bitrate, keyword_init: true)
     def initialize(recitation:, **kw)
       super(recitation: recitations[recitation], **kw)
@@ -28,13 +27,8 @@ module Quran::Audio
     # @return [String]
     #  Returns the path to an MP3 file on a remote HTTP server
     def remote_path
-      case host
-      when "everyayah.com"
-        filename = [surah.to_s.rjust(3, "0"), ayah.to_s.rjust(3, "0"), ".mp3"].join
-      else
-        filename = [surah, "/", ayah, ".mp3"].join
-      end
-      File.join format(recitation.path, bitrate:), filename
+      File.join format(recitation.path, bitrate:),
+                [surah, "/", ayah, ".mp3"].join
     end
 
     ##
