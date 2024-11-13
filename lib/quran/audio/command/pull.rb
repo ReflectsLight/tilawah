@@ -57,8 +57,7 @@ module Quran::Audio
 
     def summary(r)
       line
-        .print("Recitation".ljust(12), r.name).end
-        .print("Host".ljust(12), r.host).end
+        .print("Recited by".ljust(12), r.name).end
         .print("Directory".ljust(12), format(r.destdir, sharedir: dir.sharedir))
         .end.end
     end
