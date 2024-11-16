@@ -34,10 +34,12 @@ The following examples demonstrate how to use the quran-audio
 command-line utility to download particular recitations, and
 list available recitations as well:
 
+	##
 	# Download recitations
 	user@localhost$ quran-audio pull -r alafasy
 	user@localhost$ quran-audio pull -r rifai
 
+	##
     # List available recitations
 	user@localhost$ quran-audio ls
 
