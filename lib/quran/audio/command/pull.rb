@@ -2,6 +2,14 @@
 
 module Quran::Audio
   class Command::Pull < Command
+    require "forwardable"
+    extend Forwardable
+    def_delegators :@options,
+      :surahs,
+      :recitation,
+      :delay,
+      :bitrate
+
     ##
     # @return [void]
     def perform

@@ -20,18 +20,6 @@ module Quran::Audio
       @options = options
     end
 
-    def method_missing(m, *ary, &b)
-      Ryo.property?(options, m) ? options[m] : super
-    end
-
-    def respond_to_missing?(m, p = false)
-      Ryo.property?(options, m) || super
-    end
-
-    def respond_to?(m, p = false)
-      Ryo.property?(options, m) || super
-    end
-
     private
 
     def dir

@@ -19,11 +19,19 @@ Gem::Specification.new do |gem|
   ]
   gem.executables = ["quran-audio"]
   gem.require_paths = ["lib"]
-  gem.summary = "Downloads recitations of The Noble Quran from everyayah.com"
+  gem.summary = "Download recitations of The Noble Quran"
   gem.description = gem.summary
+
+  ##
+  # runtime dependencies
   gem.add_runtime_dependency "paint", "~> 2.3"
   gem.add_runtime_dependency "json", "~> 2.6"
   gem.add_runtime_dependency "optparse", "~> 0.6"
+  gem.add_runtime_dependency "net-http", "~> 0.5"
+  gem.add_runtime_dependency "forwardable", "~> 1.3"
+
+  ##
+  # development dependencies
   gem.add_development_dependency "standard", "~> 1.25"
   gem.add_development_dependency "irb", "~> 1.14"
 end

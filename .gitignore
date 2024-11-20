@@ -2,3 +2,4 @@
 *.gz
 *.core
 /.gems/
+/Gemfile.lock
