@@ -24,6 +24,7 @@ Gem::Specification.new do |gem|
 
   ##
   # runtime dependencies
+  # (all but "paint" are from the stdlib)
   gem.add_runtime_dependency "paint", "~> 2.3"
   gem.add_runtime_dependency "json", "~> 2.6"
   gem.add_runtime_dependency "optparse", "~> 0.6"
