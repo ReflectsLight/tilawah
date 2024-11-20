@@ -2,14 +2,9 @@
 
 module Quran::Audio
   class Command::Pull < Command
-    set_banner usage: "quran-audio pull [OPTIONS]",
-               description: "Download MP3 files"
-    set_option "-r RECITATION", "--recitation RECITATION", "A recitation's name", default: "alafasy"
-    set_option "-b BITRATE", "--bitrate BITRATE", "MP3 bitrate"
-    set_option "-s NUMBERS", "--surahs NUMBERS", "Comma-separated list of surah IDs", as: Array, default: (1..114)
-    set_option "-d SECONDS", "--delay", "Delay between requests, in seconds", as: Float, default: 0.5
-
-    def run
+    ##
+    # @return [void]
+    def perform
       summary(recitations[recitation])
       start(surahs)
     end
@@ -58,16 +53,16 @@ module Quran::Audio
     def summary(r)
       line
         .print("Recited by".ljust(12), r.name).end
-        .print("Directory".ljust(12), format(r.destdir, sharedir: dir.sharedir))
+        .print("Directory".ljust(12), format(r.destdir, sharedir: dir.share))
         .end.end
     end
 
     def sizeof
-      @sizeof ||= Ryo.from_json(path: File.join(dir.jsondir, "sizeof.json"))
+      @sizeof ||= Ryo.from_json(path: File.join(dir.json, "sizeof.json"))
     end
 
     def recitations
-      @recitations ||= Ryo.from_json(path: File.join(dir.jsondir, "recitations.json"))
+      @recitations ||= Ryo.from_json(path: File.join(dir.json, "recitations.json"))
     end
 
     def abort!

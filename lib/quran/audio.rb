@@ -9,7 +9,6 @@ module Quran
     setup_bundle!
 
     require "json"
-    require "cmd"
     require "ryo"
     require "ryo/json"
     require "fileutils"

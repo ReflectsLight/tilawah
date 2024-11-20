@@ -1,12 +1,6 @@
 [submodule "bundle/ryo.rb"]
 	path = bundle/ryo.rb
 	url = https://github.com/0x1eef/ryo.rb
-[submodule "bundle/cmd.rb"]
-	path = bundle/cmd.rb
-	url = https://github.com/0x1eef/cmd.rb
 [submodule "bundle/io-line.rb"]
 	path = bundle/io-line.rb
 	url = https://github.com/0x1eef/io-line.rb
-[submodule "bundle/cli-option_parser.rb"]
-	path = bundle/cli-option_parser.rb
-	url = https://github.com/0x1eef/cli-option_parser.rb

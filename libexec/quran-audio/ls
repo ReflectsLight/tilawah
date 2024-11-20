@@ -2,9 +2,26 @@
 # frozen_string_literal: true
 
 require "quran/audio"
+require "optparse"
+
+##
+# main
 def main(argv)
-  Quran::Audio::Command::Ls
-    .new(argv)
-    .run
+  options = Ryo({})
+  option_parser.parse(argv, into: options)
+  Quran::Audio::Command::Ls.new(options).perform
 end
-main(ARGV)
+
+##
+# utils
+def option_parser
+  OptionParser.new do |o|
+    o.banner = "Usage: quran-audio ls [OPTIONS]"
+  end
+end
+
+excode = catch(:abort) {
+  main(ARGV)
+  0
+}
+exit excode

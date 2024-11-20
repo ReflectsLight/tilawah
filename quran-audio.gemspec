@@ -23,6 +23,7 @@ Gem::Specification.new do |gem|
   gem.description = gem.summary
   gem.add_runtime_dependency "paint", "~> 2.3"
   gem.add_runtime_dependency "json", "~> 2.6"
+  gem.add_runtime_dependency "optparse", "~> 0.6"
   gem.add_development_dependency "standard", "~> 1.25"
   gem.add_development_dependency "irb", "~> 1.14"
 end

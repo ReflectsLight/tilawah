@@ -2,11 +2,33 @@
 # frozen_string_literal: true
 
 require "quran/audio"
+require "optparse"
+
+##
+# main
 def main(argv)
-  Quran::Audio::Command::Pull
-    .new(argv)
-    .run
+  options = Ryo({
+    recitation: "alafasy",
+    bitrate: 128,
+    surahs: (1..114),
+    delay: 0.5
+  })
+  option_parser.parse(argv, into: options)
+  Quran::Audio::Command::Pull.new(options).perform
 end
+
+##
+# utils
+def option_parser
+  OptionParser.new do |o|
+    o.banner = "Usage: quran-audio pull [OPTIONS]"
+    o.on("-r RECITATION", "--recitation RECITATION", "A recitation's name", String)
+    o.on("-b BITRATE"   , "--bitrate BITRATE", "MP3 bitrate", Integer)
+    o.on("-s NUMBERS"   , "--surahs NUMBERS", "Comma-separated list of surah IDs", Array)
+    o.on("-d SECONDS"   , "--delay", "Delay between requests, in seconds", Float)
+  end
+end
+
 excode = catch(:abort) {
   main(ARGV)
   0
