@@ -7,8 +7,11 @@ rescue Interrupt
   retry
 end
 
+def libexec
+  File.realpath File.join(__dir__, "..", "libexec", "quran-audio")
+end
+
 def main(argv)
-  libexec = File.realpath File.join(__dir__, "..", "libexec", "quran-audio")
   case argv[0]
   when "pull"
     Process.spawn File.join(libexec, "pull"), *ARGV[1..]
