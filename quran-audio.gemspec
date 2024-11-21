@@ -14,8 +14,9 @@ Gem::Specification.new do |gem|
     "lib/**/*.rb",
     "share/**/*",
     "bin/*",
-    "vendor/*/lib/*.rb",
-    "vendor/*/lib/**/*.rb",
+    "bundle/*/lib/*.rb",
+    "bundle/*/lib/**/*.rb",
+    "bundle/*/lib/*/**/*.rb",
   ]
   gem.executables = ["quran-audio"]
   gem.require_paths = ["lib"]
