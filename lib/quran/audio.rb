@@ -10,7 +10,6 @@ module Quran
 
     require "json"
     require "ryo"
-    require "ryo/json"
     require "fileutils"
     require "io/console"
     require "io/line"
