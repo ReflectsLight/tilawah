@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module Quran::Audio
+module QuranAudio
   ##
-  # {Quran::Audio::MP3 Quran::Audio::MP3} represents
+  # {QuranAudio::MP3 QuranAudio::MP3} represents
   # an ayah of The Noble Quran in the MP3 format.
   class MP3 < Struct.new(:recitation, :surah, :ayah, :bitrate, keyword_init: true)
     def initialize(recitation:, **kw)
@@ -57,7 +57,7 @@ module Quran::Audio
 
     def jsondir
       @jsondir ||= File.realpath File.join(
-        __dir__, "..", "..", "..",
+        __dir__, "..", "..",
         "share", "quran-audio", "json"
       )
     end

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "quran/audio"
+require "quran-audio"
 require "optparse"
 
 ##
@@ -9,7 +9,7 @@ require "optparse"
 def main(argv)
   options = Ryo({})
   option_parser.parse(argv, into: options)
-  Quran::Audio::Command::Ls.new(options).perform
+  QuranAudio::Command::Ls.new(options).perform
 end
 
 ##

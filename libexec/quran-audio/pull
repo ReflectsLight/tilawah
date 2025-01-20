@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "quran/audio"
+require "quran-audio"
 require "optparse"
 
 ##
@@ -14,7 +14,7 @@ def main(argv)
     delay: 0.5
   })
   option_parser.parse(argv, into: options)
-  Quran::Audio::Command::Pull.new(options).perform
+  QuranAudio::Command::Pull.new(options).perform
 end
 
 ##

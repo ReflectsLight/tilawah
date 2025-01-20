@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module Quran::Audio
+module QuranAudio
   ##
-  # The {Quran::Audio::Command Quran::Audio::Command} class
+  # The {QuranAudio::Command QuranAudio::Command} class
   # is the superclass of all commands.
   class Command
     require_relative "command/ls"
@@ -26,7 +26,7 @@ module Quran::Audio
       @dir ||= Ryo.from({
         localbase: File.join(Dir.home, ".local"),
         share: Ryo.memo { File.join(localbase, "share", "quran-audio") },
-        root: File.realpath(File.join(__dir__, "..", "..", "..")),
+        root: File.realpath(File.join(__dir__, "..", "..")),
         erb: Ryo.memo { File.join(root, "share", "quran-audio", "erb") },
         json: Ryo.memo { File.join(root, "share", "quran-audio", "json") },
       })

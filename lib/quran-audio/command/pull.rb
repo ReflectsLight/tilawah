@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Quran::Audio
+module QuranAudio
   class Command::Pull < Command
     require "forwardable"
     extend Forwardable
