@@ -21,8 +21,6 @@ organized per this directory structure:
 
 * **~/.local/share/quran-audio/mp3/alafasy/** <br>
   Contains recitations by Mishari bin Rashed Alafasy
-* **~/.local/share/quran-audio/mp3/alajmi/** <br>
-  Contains recitations by Ahmad bin Ali Al-Ajmi
 * **~/.local/share/quran-audio/mp3/yassin/** <br>
   Contains recitations by Sahl Yassin
 * **~/.local/share/quran-audio/mp3/rifai/** <br>
@@ -54,7 +52,6 @@ quran-audio is available via rubygems.org
 **Recitations**
 
 * Mishari bin Rashed Alafasy
-* Ahmad bin Ali Al-Ajmi
 * Sahl Yassin
 * Hani ar-Rifai
 
