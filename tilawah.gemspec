@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |gem|
-  gem.name = "quran-audio"
+  gem.name = "tilawah"
   gem.authors = ["0x1eef"]
   gem.email = ["0x1eef@protonmail.com"]
-  gem.homepage = "https://github.com/ReflectsLight/quran-audio#readme"
-  gem.version = File.binread("./share/quran-audio/VERSION")[/[\d.]+/]
+  gem.homepage = "https://github.com/ReflectsLight/tilawah#readme"
+  gem.version = File.binread("./share/tilawah/VERSION")[/[\d.]+/]
   gem.licenses = ["GPL-3.0-or-later"]
   gem.files = Dir[
     "README.md",
@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
     "bundle/*/lib/**/*.rb",
     "bundle/*/lib/*/**/*.rb",
   ]
-  gem.executables = ["quran-audio"]
+  gem.executables = ["tilawah"]
   gem.require_paths = ["lib"]
   gem.summary = "Download recitations of The Noble Quran"
   gem.description = gem.summary

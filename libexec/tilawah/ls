@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "quran-audio"
+require "tilawah"
 require "optparse"
 
 ##
@@ -9,14 +9,14 @@ require "optparse"
 def main(argv)
   options = Ryo({})
   option_parser.parse(argv, into: options)
-  QuranAudio::Command::Ls.new(options).perform
+  Tilawah::Command::Ls.new(options).perform
 end
 
 ##
 # utils
 def option_parser
   OptionParser.new do |o|
-    o.banner = "Usage: quran-audio ls [OPTIONS]"
+    o.banner = "Usage: tilawah ls [OPTIONS]"
   end
 end
 

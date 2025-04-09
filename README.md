@@ -4,7 +4,7 @@
 
 ## About
 
-quran-audio is a command-line utility that
+tilawah is a command-line utility that
 can download recitations of The Noble Quran from
 [al-quran-audio.reflectslight.io](https://al-quran-audio.reflectslight.io).
 The recitations are provided in the MP3 format with
@@ -15,39 +15,39 @@ one MP3 file per ayah and a *minimum* bitrate of
 
 #### Commands
 
-* **quran-audio pull** <br>
+* **tilawah pull** <br>
   The pull command downloads recitations. <br>
   For example:
 
-	    user@mecca$ quran-audio pull -r alafasy
+	    user@mecca$ tilawah pull -r alafasy
 
-* **quran-audio ls** <br>
+* **tilawah ls** <br>
   The ls command lists the recitations available for download. <br>
   For example:
 
-        user@medina$ quran-audio ls
+        user@medina$ tilawah ls
 
 ## share/
 
 The command-line utility attempts to download MP3 files
-relative to the `~/.local/share/quran-audio/` directory.
+relative to the `~/.local/share/tilawah/` directory.
 A single, full recitation of The Noble Quran typically
 ranges from 2.5GB to 2.8GB in size.
 
 The directory layout:
 
-* **~/.local/share/quran-audio/mp3/alafasy/** <br>
+* **~/.local/share/tilawah/mp3/alafasy/** <br>
   Contains recitations by Mishari bin Rashed Alafasy
-* **~/.local/share/quran-audio/mp3/yassin/** <br>
+* **~/.local/share/tilawah/mp3/yassin/** <br>
   Contains recitations by Sahl Yassin
-* **~/.local/share/quran-audio/mp3/rifai/** <br>
+* **~/.local/share/tilawah/mp3/rifai/** <br>
   Contains recitations by Hani ar-Rifai
 
 ## Install
 
-quran-audio is available via rubygems.org
+tilawah is available via rubygems.org
 
-    gem install quran-audio
+    gem install tilawah
 
 ## Credit
 
@@ -64,7 +64,7 @@ quran-audio is available via rubygems.org
 ## See also
 
 * [al-quran.reflectslight.io](https://al-quran.reflectslight.io)
-* [al-quran-audio.reflectslight.io](https://al-quran-audio.reflectslight.io)
+* [al-tilawah.reflectslight.io](https://al-quran-audio.reflectslight.io)
 
 ## License
 

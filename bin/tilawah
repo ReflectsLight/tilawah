@@ -8,7 +8,7 @@ rescue Interrupt
 end
 
 def libexec
-  File.realpath File.join(__dir__, "..", "libexec", "quran-audio")
+  File.realpath File.join(__dir__, "..", "libexec", "tilawah")
 end
 
 def main(argv)
@@ -20,7 +20,7 @@ def main(argv)
     Process.spawn File.join(libexec, "ls"), *ARGV[1..]
     Process.wait
   else
-    warn "Usage: quran-audio [COMMAND] [OPTIONS]\n\n" \
+    warn "Usage: tilawah [COMMAND] [OPTIONS]\n\n" \
          "Commands:\n" \
          "  pull              Download recitations\n" \
          "  ls                List available recitations\n"

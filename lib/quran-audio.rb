@@ -1,4 +1,4 @@
-module QuranAudio
+module Tilawah
   def self.setup_bundle!
     bundle = File.realpath File.join(__dir__, "..", "bundle")
     Dir[File.join(bundle, "*")].each { $:.unshift File.join(_1, "lib") }
