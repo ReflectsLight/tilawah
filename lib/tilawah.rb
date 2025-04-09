@@ -13,6 +13,6 @@ module Tilawah
   require "erb"
   require "paint"
   require "net/http"
-  require_relative "quran-audio/command"
-  require_relative "quran-audio/mp3"
+  require_relative "tilawah/command"
+  require_relative "tilawah/mp3"
 end
