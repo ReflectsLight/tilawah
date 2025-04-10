@@ -1,6 +1,0 @@
-[submodule "bundle/ryo.rb"]
-	path = bundle/ryo.rb
-	url = https://github.com/0x1eef/ryo.rb
-[submodule "bundle/io-line.rb"]
-	path = bundle/io-line.rb
-	url = https://github.com/0x1eef/io-line.rb

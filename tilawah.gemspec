@@ -32,6 +32,8 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "optparse", "~> 0.6"
   gem.add_runtime_dependency "net-http", "~> 0.5"
   gem.add_runtime_dependency "forwardable", "~> 1.3"
+  gem.add_runtime_dependency "ryo.rb", "~> 0.5"
+  gem.add_runtime_dependency "io-line.rb", "~> 0.1"
 
   ##
   # development dependencies

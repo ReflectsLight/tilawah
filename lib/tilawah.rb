@@ -1,8 +1,18 @@
 # frozen_string_literal: true
 
 module Tilawah
-  bundle = File.realpath File.join(__dir__, "..", "bundle")
-  Dir[File.join(bundle, "*")].each { $:.unshift File.join(_1, "lib") }
+  require "json"
+  require "ryo"
+  require "fileutils"
+  require "io/console"
+  require "io/line"
+  require "erb"
+  require "paint"
+  require "net/http"
+
+  require_relative "tilawah/version"
+  require_relative "tilawah/command"
+  require_relative "tilawah/mp3"
 
   ##
   # @return [Ryo::Object]
@@ -30,17 +40,4 @@ module Tilawah
       json: Ryo.memo { File.join(root, "share", "tilawah", "json") }
     })
   end
-
-  require "json"
-  require "ryo"
-  require "fileutils"
-  require "io/console"
-  require "io/line"
-  require "erb"
-  require "paint"
-  require "net/http"
-
-  require_relative "tilawah/version"
-  require_relative "tilawah/command"
-  require_relative "tilawah/mp3"
 end
