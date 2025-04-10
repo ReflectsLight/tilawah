@@ -7,25 +7,25 @@ require "optparse"
 ##
 # main
 def main(argv)
-  options = Ryo({
-    recitation: "alafasy",
-    bitrate: 128,
-    surahs: (1..114),
-    delay: 0.5
-  })
+  options = Ryo(bitrate: 128, surahs: (1..114), delay: 0.5)
   option_parser.parse(argv, into: options)
-  Tilawah::Command::Pull.new(options).perform
+  if argv.empty?
+    warn option_parser.help
+    throw(:abort, 1)
+  else
+    Ryo.assign(options, {recitation: argv[0]})
+    Tilawah::Command::Pull.new(options).perform
+  end
 end
 
 ##
 # utils
 def option_parser
   OptionParser.new do |o|
-    o.banner = "Usage: tilawah pull [OPTIONS]"
-    o.on("-r RECITATION", "--recitation RECITATION", "A recitation's name", String)
-    o.on("-b BITRATE"   , "--bitrate BITRATE", "MP3 bitrate", Integer)
-    o.on("-s NUMBERS"   , "--surahs NUMBERS", "Comma-separated list of surah IDs", Array)
-    o.on("-d SECONDS"   , "--delay", "Delay between requests, in seconds", Float)
+    o.banner = "Usage: tilawah pull [OPTIONS] <RECITER>"
+    o.on("-b BITRATE", nil, "MP3 bitrate", Integer)
+    o.on("-s NUMBERS", nil, "Comma-separated list of surah IDs", Array)
+    o.on("-d SECONDS", nil, "Delay between requests, in seconds", Float)
   end
 end
 

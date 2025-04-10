@@ -2,11 +2,11 @@
 
 module Tilawah
   ##
-  # {Tilawah::MP3 Tilawah::MP3} represents
-  # an ayah of The Noble Quran in the MP3 format.
+  # {Tilawah::MP3 Tilawah::MP3} represents an ayah of
+  # The Noble Quran in the MP3 format.
   class MP3 < Struct.new(:recitation, :surah, :ayah, :bitrate, keyword_init: true)
     def initialize(recitation:, **kw)
-      super(recitation: recitations[recitation], **kw)
+      super(recitation: Tilawah.recitations[recitation], **kw)
     end
 
     ##
@@ -36,29 +36,9 @@ module Tilawah
     #  Returns the path to an MP3 file on disk
     def local_path
       File.join(
-        format(recitation.destdir, sharedir:),
+        format(recitation.destdir, sharedir: Tilawah.paths.share),
         surah.to_s,
         "#{ayah}.mp3"
-      )
-    end
-
-    private
-
-    def recitations
-      @recitations ||= Ryo.from_json(path: File.join(jsondir, "recitations.json"))
-    end
-
-    def sharedir
-      @sharedir ||= begin
-        localbase = File.join(Dir.home, ".local")
-        File.join(localbase, "share", "tilawah")
-      end
-    end
-
-    def jsondir
-      @jsondir ||= File.realpath File.join(
-        __dir__, "..", "..",
-        "share", "tilawah", "json"
       )
     end
   end

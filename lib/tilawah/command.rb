@@ -22,16 +22,6 @@ module Tilawah
 
     private
 
-    def dir
-      @dir ||= Ryo.from({
-        localbase: File.join(Dir.home, ".local"),
-        share: Ryo.memo { File.join(localbase, "share", "tilawah") },
-        root: File.realpath(File.join(__dir__, "..", "..")),
-        erb: Ryo.memo { File.join(root, "share", "tilawah", "erb") },
-        json: Ryo.memo { File.join(root, "share", "tilawah", "json") },
-      })
-    end
-
     def line
       @line ||= IO::Line.new($stdout)
     end

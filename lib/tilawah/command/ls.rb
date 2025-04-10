@@ -5,11 +5,16 @@ module Tilawah
     ##
     # @return [void]
     def perform
-      recitations = Ryo.from_json(path: File.join(dir.json, "recitations.json"))
-      template = File.binread(File.join(dir.erb, "recitation.erb"))
-      puts Ryo.each(recitations).map { |switch, recitation|
-        ERB.new(template).result_with_hash({switch:, recitation: Ryo(recitation)})
-      }.join("\n")
+      Ryo.each(Tilawah.recitations) do |switch, recitation|
+        erb = ERB.new(template)
+        print erb.result_with_hash({switch:, recitation: Ryo(recitation)}), "\n"
+      end
+    end
+
+    private
+
+    def template
+      File.binread File.join(Tilawah.paths.erb, "recitation.erb")
     end
   end
 end

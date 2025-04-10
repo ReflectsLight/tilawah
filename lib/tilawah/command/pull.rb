@@ -13,7 +13,7 @@ module Tilawah
     ##
     # @return [void]
     def perform
-      summary(recitations[recitation])
+      summary(Tilawah.recitations[recitation])
       start(surahs)
     end
 
@@ -23,10 +23,10 @@ module Tilawah
 
     def start(surahs)
       surahs.each do |surah|
-        1.upto(sizeof[surah]) do |ayah|
+        1.upto(Tilawah.sizes[surah]) do |ayah|
           mp3 = MP3.new(recitation:, surah:, ayah:, bitrate:)
           pull(mp3, delay) unless File.exist?(mp3.local_path)
-          percent = sprintf("%.2f", (ayah / sizeof[surah].to_f) * 100)
+          percent = sprintf("%.2f", (ayah / Tilawah.sizes[surah].to_f) * 100)
           line.rewind.print "Surah #{surah} [#{percent}%]"
         end
         line.end
@@ -61,16 +61,8 @@ module Tilawah
     def summary(r)
       line
         .print("Recited by".ljust(12), r.name).end
-        .print("Directory".ljust(12), format(r.destdir, sharedir: dir.share))
+        .print("Directory".ljust(12), format(r.destdir, sharedir: Tilawah.paths.share))
         .end.end
-    end
-
-    def sizeof
-      @sizeof ||= Ryo.from_json(path: File.join(dir.json, "sizeof.json"))
-    end
-
-    def recitations
-      @recitations ||= Ryo.from_json(path: File.join(dir.json, "recitations.json"))
     end
 
     def abort!

@@ -1,9 +1,35 @@
+# frozen_string_literal: true
+
 module Tilawah
-  def self.setup_bundle!
-    bundle = File.realpath File.join(__dir__, "..", "bundle")
-    Dir[File.join(bundle, "*")].each { $:.unshift File.join(_1, "lib") }
+  bundle = File.realpath File.join(__dir__, "..", "bundle")
+  Dir[File.join(bundle, "*")].each { $:.unshift File.join(_1, "lib") }
+
+  ##
+  # @return [Ryo::Object]
+  #  Returns available recitations
+  def self.recitations
+    @recitations ||= Ryo.from_json(path: "#{paths.json}/recitations.json")
   end
-  setup_bundle!
+
+  ##
+  # @return [Ryo::Object]
+  #  Returns surah id => ayah count
+  def self.sizes
+    @sizes ||= Ryo.from_json(path: "#{paths.json}/sizes.json")
+  end
+
+  ##
+  # @return [Ryo::Object]
+  #  Returns available paths
+  def self.paths
+    @paths ||= Ryo.from({
+      localbase: File.join(Dir.home, ".local"),
+      share: Ryo.memo { File.join(localbase, "share", "tilawah") },
+      root: File.realpath(File.join(__dir__, "..")),
+      erb: Ryo.memo { File.join(root, "share", "tilawah", "erb") },
+      json: Ryo.memo { File.join(root, "share", "tilawah", "json") }
+    })
+  end
 
   require "json"
   require "ryo"
