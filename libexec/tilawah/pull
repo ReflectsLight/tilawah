@@ -11,7 +11,7 @@ def main(argv)
   option_parser.parse(argv, into: options)
   if argv.empty?
     warn option_parser.help
-    throw(:abort, 1)
+    throw(:exit, 1)
   else
     Ryo.assign(options, {recitation: argv[0]})
     Tilawah::Command::Pull.new(options).perform
@@ -29,7 +29,7 @@ def option_parser
   end
 end
 
-excode = catch(:abort) {
+excode = catch(:exit) {
   main(ARGV)
   0
 }

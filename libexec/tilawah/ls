@@ -20,7 +20,7 @@ def option_parser
   end
 end
 
-excode = catch(:abort) {
+excode = catch(:exit) {
   main(ARGV)
   0
 }

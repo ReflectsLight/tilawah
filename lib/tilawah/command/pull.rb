@@ -66,7 +66,7 @@ module Tilawah
     end
 
     def abort!
-      throw(:abort, 1)
+      throw(:exit, 1)
     end
   end
 end
