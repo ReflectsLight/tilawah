@@ -39,6 +39,8 @@ module Tilawah
   require "erb"
   require "paint"
   require "net/http"
+
+  require_relative "tilawah/version"
   require_relative "tilawah/command"
   require_relative "tilawah/mp3"
 end

@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
+require_relative "lib/tilawah/version"
 Gem::Specification.new do |gem|
   gem.name = "tilawah"
   gem.authors = ["0x1eef"]
   gem.email = ["0x1eef@protonmail.com"]
   gem.homepage = "https://github.com/ReflectsLight/tilawah#readme"
-  gem.version = File.binread("./share/tilawah/VERSION")[/[\d.]+/]
+  gem.version = Tilawah::VERSION
   gem.licenses = ["GPL-3.0-or-later"]
   gem.files = Dir[
     "README.md",
