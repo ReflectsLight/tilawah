@@ -28,5 +28,15 @@
     "host": "al-quran-audio.reflectslight.io",
     "path": "/rifai/",
     "destdir": "%{sharedir}/mp3/rifai/"
+  },
+  "aljuhany": {
+    "id": "aljuhany",
+    "name": "Abdullah Awad Al Juhany",
+    "origin": "Saudi Arabia",
+    "available_bitrates": [128],
+    "default_bitrate": 128,
+    "host": "everyayah.com",
+    "path": "/data/Abdullaah_3awwaad_Al-Juhaynee_128kbps/",
+    "destdir": "%{sharedir}/mp3/aljuhany/"
   }
 }

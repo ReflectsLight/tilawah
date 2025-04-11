@@ -6,11 +6,12 @@
 
 tilawah is a command-line utility that
 can download recitations of The Noble Quran from
-[al-quran-audio.reflectslight.io](https://al-quran-audio.reflectslight.io).
-The recitations are provided in the MP3 format with
-one MP3 file per ayah and a *minimum* bitrate of
+[al-quran-audio.reflectslight.io](https://al-quran-audio.reflectslight.io)
+and/or [everyayh.com](https://everyayah.com) to your
+computer. The recitations are provided in the MP3 format
+with one MP3 file per ayah and a *minimum* bitrate of
 128kbps.
-  
+
 The command-line utility attempts to download MP3 files
 relative to the `${HOME}/.local/share/tilawah/` directory.
 A single, full recitation of The Noble Quran typically
@@ -24,6 +25,8 @@ The directory layout:
   Contains recitations by Sahl Yassin
 * `${HOME}/.local/share/tilawah/mp3/rifai/` <br>
   Contains recitations by Hani ar-Rifai
+* `${HOME}/.local/share/tilawah/mp3/aljuhany/` <br>
+  Contains recitations by Abdullah Awad Al Juhany
 
 ## Credit
 
@@ -32,6 +35,7 @@ The directory layout:
 * Mishari bin Rashed Alafasy
 * Sahl Yassin
 * Hani ar-Rifai
+* Abdullah Awad Al Juhany
 
 **Sources**
 

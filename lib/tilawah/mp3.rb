@@ -27,8 +27,14 @@ module Tilawah
     # @return [String]
     #  Returns the path to an MP3 file on a remote HTTP server
     def remote_path
-      File.join format(recitation.path, bitrate:),
-                [surah, "/", ayah, ".mp3"].join
+      case host
+      when "everyayah.com"
+        File.join format(recitation.path, bitrate:)
+                  [surah.to_s.rjust(3, "0"), ayah.to_s.rjust(3, "0"), ".mp3"].join
+      else
+        File.join format(recitation.path, bitrate:),
+                  [surah, "/", ayah, ".mp3"].join
+      end
     end
 
     ##
