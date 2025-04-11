@@ -29,14 +29,14 @@
     "path": "/rifai/",
     "destdir": "%{sharedir}/mp3/rifai/"
   },
-  "aljuhany": {
-    "id": "aljuhany",
-    "name": "Abdullah Awad Al Juhany",
-    "origin": "Saudi Arabia",
+  "alsuesy": {
+    "id": "alsuesy",
+    "name": "Ali Hajjaj As-Suwaisy",
+    "origin": "Egypt",
     "available_bitrates": [128],
     "default_bitrate": 128,
     "host": "everyayah.com",
-    "path": "/data/Abdullaah_3awwaad_Al-Juhaynee_128kbps/",
-    "destdir": "%{sharedir}/mp3/aljuhany/"
+    "path": "/data/Ali_Hajjaj_AlSuesy_128kbps",
+    "destdir": "%{sharedir}/mp3/alsuesy/"
   }
 }

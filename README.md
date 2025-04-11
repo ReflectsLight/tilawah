@@ -25,8 +25,8 @@ The directory layout:
   Contains recitations by Sahl Yassin
 * `${HOME}/.local/share/tilawah/mp3/rifai/` <br>
   Contains recitations by Hani ar-Rifai
-* `${HOME}/.local/share/tilawah/mp3/aljuhany/` <br>
-  Contains recitations by Abdullah Awad Al Juhany
+* `${HOME}/.local/share/tilawah/mp3/alsuesy/` <br>
+  Contains recitations by Ali Hajjaj As-Suwaisy
 
 ## Credit
 
@@ -35,7 +35,7 @@ The directory layout:
 * Mishari bin Rashed Alafasy
 * Sahl Yassin
 * Hani ar-Rifai
-* Abdullah Awad Al Juhany
+* Ali Hajjaj As-Suwaisy
 
 **Sources**
 
