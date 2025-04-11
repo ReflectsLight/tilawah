@@ -7,7 +7,7 @@
 tilawah is a command-line utility that
 can download recitations of The Noble Quran from
 [al-quran-audio.reflectslight.io](https://al-quran-audio.reflectslight.io)
-and/or [everyayh.com](https://everyayah.com) to your
+and/or [everyayah.com](https://everyayah.com) to your
 computer. The recitations are provided in the MP3 format
 with one MP3 file per ayah and a *minimum* bitrate of
 128kbps.
