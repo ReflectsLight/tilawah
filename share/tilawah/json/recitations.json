@@ -38,5 +38,15 @@
     "host": "everyayah.com",
     "path": "/data/Ali_Hajjaj_AlSuesy_128kbps",
     "destdir": "%{sharedir}/mp3/alsuesy/"
+  },
+  "shuraym": {
+    "id": "shuraym",
+    "name": "Saood ash-Shuraym",
+    "origin": "Saudi Arabia",
+    "available_bitrates": [128],
+    "default_bitrate": 128,
+    "host": "everyayah.com",
+    "path": "/data/Saood_ash-Shuraym_128kbps",
+    "destdir": "%{sharedir}/mp3/shuraym/"
   }
 }
